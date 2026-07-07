@@ -1,0 +1,12 @@
+{
+  "name": "SayRight",
+  "slug": "PronunciationScoring",
+  "category": "Language & Text",
+  "tagline": "Reads a sentence aloud and scores your pronunciation per word and per phoneme, fully offline.",
+  "model": "Citrinet-256 (phoneme CTC)",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

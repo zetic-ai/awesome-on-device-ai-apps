@@ -63,14 +63,28 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
       (drop "SDK example" framing, keep it "an app you'd use").
 - [ ] **Model licenses.** Confirm each underlying model permits redistribution/use and note it.
 
-## 🟢 Growth (Phase 3 — the "insanely many apps" pipeline)
+## 🔴 Follow-ups from the PR-queue migration (18 apps just added)
 
-- [ ] **Port the ~20 open PRs** from `ZETIC_Melange_apps` into this repo (each becomes an
-      `apps/<App>/` + `meta.json`): SiteGuard, PlateHawk, SkyScout, FundusGate, GradeVue,
-      OraLens, ShelfSense, SayRight, CherryPad, VoxScribe, Qwen-TTS, MedASR, neutts, and more.
-- [ ] **Bump the hero count** in `README.md` as apps land (currently "18+").
-- [ ] **Launch plan:** set up the Star History chart baseline, write the HN / Reddit / X
-      posts, line up the first wave of stars, submit to Trendshift.
+- [ ] **REVOKE two leaked keys immediately.** Two PRs committed real Melange tokens; they were
+      public and are now scrubbed to placeholders here, but the live tokens must be rotated:
+      `dev_24c61ecf...` (NeuTTSNanoApp / NeuTTS) and `ztp_37418352...` (MedASR). Revoke in the
+      Melange dashboard.
+- [ ] **These 18 apps came from UNMERGED PRs** (not yet reviewed/merged upstream). Treat them as
+      unverified: build + run each on a device, confirm quality, and fix or drop any that fall
+      below the "would a stranger use this?" bar.
+- [ ] **Fill in `melange` links** in the 18 new `meta.json` files (set to `null` because the
+      model pages were not verified). Most follow `ajayshah/<AppName>`; confirm and add.
+- [ ] **Demo GIFs** for the new apps (all `demo: null` except AI-Keyboard). Several ship input
+      samples under `demo_images/`, but not a running-app GIF.
+- [ ] **Flutter is now a first-class platform** (12 of the new apps are Flutter). The hero badge
+      was updated to Android | iOS | Flutter; make sure docs/positioning reflect that.
+- [ ] **Repo weight jumped** (~+464 MB of bundled model weights from the migration). Revisit the
+      Git-LFS decision above with urgency now that it is real.
+
+## 🟢 Growth / launch
+
+- [ ] **Launch plan:** set up the Star History chart baseline, write the HN / Reddit / X posts,
+      line up the first wave of stars, submit to Trendshift.
 
 ---
 

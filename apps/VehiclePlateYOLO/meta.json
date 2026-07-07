@@ -1,0 +1,12 @@
+{
+  "name": "PlateHawk",
+  "slug": "VehiclePlateYOLO",
+  "category": "Vision",
+  "tagline": "Detects license plates in the live camera feed, frame by frame, entirely on-device.",
+  "model": "YOLOv8n",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

@@ -1,0 +1,12 @@
+{
+  "name": "FundusGate",
+  "slug": "RetinaDRScreen",
+  "category": "Health & Wellbeing",
+  "tagline": "Screens fundus photos for referable diabetic retinopathy, on-device (non-diagnostic).",
+  "model": "MobileNetV2",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

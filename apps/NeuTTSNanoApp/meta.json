@@ -1,0 +1,12 @@
+{
+  "name": "NeuTTS Nano",
+  "slug": "NeuTTSNanoApp",
+  "category": "Audio",
+  "tagline": "On-device text-to-speech with voice cloning, via a three-stage NeuTTS Nano pipeline.",
+  "model": "NeuTTS Nano",
+  "platforms": [
+    "iOS"
+  ],
+  "demo": null,
+  "melange": null
+}

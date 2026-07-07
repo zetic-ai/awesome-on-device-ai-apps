@@ -1,0 +1,12 @@
+{
+  "name": "SentryWave",
+  "slug": "SensorForecastTS",
+  "category": "Forecasting",
+  "tagline": "Streams live sensor data, forecasts it with a quantile fan, and flags anomalies that break the band.",
+  "model": "Chronos-Bolt-tiny",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

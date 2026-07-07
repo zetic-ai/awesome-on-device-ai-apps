@@ -62,7 +62,7 @@ def cat_id(cat):
 
 
 def platform_badges(plats):
-    return " ".join(f"`{p}`" for p in plats) or "—"
+    return " ".join(f"`{p}`" for p in plats) or "·"
 
 
 def render_catalog(apps, link_prefix="apps/", anchors=True):
@@ -81,7 +81,7 @@ def render_catalog(apps, link_prefix="apps/", anchors=True):
         lines.append("| :-- | :-- | :-- | :-- | :-- |")
         for a in items:
             name = f"[**{a['name']}**]({link_prefix}{a['slug']})"
-            try_ = f"[Model ↗]({a['melange']})" if a.get("melange") else "—"
+            try_ = f"[Model ↗]({a['melange']})" if a.get("melange") else "·"
             lines.append(f"| {name} | {a['tagline']} | `{a['model']}` | {platform_badges(a['platforms'])} | {try_} |")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"

@@ -1,0 +1,12 @@
+{
+  "name": "RedactLens",
+  "slug": "LiveDocRedact",
+  "category": "Vision",
+  "tagline": "Auto-redacts name, date-of-birth, and ID fields on IDs and forms live in the camera preview, before anything is stored.",
+  "model": "PP-OCRv5 (DBNet + CRNN)",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

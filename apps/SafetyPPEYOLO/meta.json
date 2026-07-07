@@ -1,0 +1,12 @@
+{
+  "name": "SiteGuard",
+  "slug": "SafetyPPEYOLO",
+  "category": "Vision",
+  "tagline": "Real-time worker PPE compliance: detects helmets, vests, and violations live on the camera feed.",
+  "model": "YOLOv8s (PPE)",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

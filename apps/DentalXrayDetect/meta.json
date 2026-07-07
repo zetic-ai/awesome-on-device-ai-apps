@@ -1,0 +1,12 @@
+{
+  "name": "OraLens",
+  "slug": "DentalXrayDetect",
+  "category": "Health & Wellbeing",
+  "tagline": "Detects caries and periapical lesions on a dental X-ray you upload, on-device (non-diagnostic).",
+  "model": "YOLO11n",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

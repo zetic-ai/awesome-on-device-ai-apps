@@ -1,0 +1,12 @@
+{
+  "name": "GradeVue",
+  "slug": "RetinaDRGrade",
+  "category": "Health & Wellbeing",
+  "tagline": "Grades diabetic-retinopathy severity from a fundus photo, on-device (non-diagnostic).",
+  "model": "MobileNetV2",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

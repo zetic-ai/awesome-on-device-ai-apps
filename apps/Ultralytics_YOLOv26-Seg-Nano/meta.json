@@ -1,0 +1,12 @@
+{
+  "name": "YOLOv26-Seg",
+  "slug": "Ultralytics_YOLOv26-Seg-Nano",
+  "category": "Vision",
+  "tagline": "Real-time instance segmentation on-device with YOLOv26-Seg Nano.",
+  "model": "YOLOv26-Seg Nano",
+  "platforms": [
+    "Android"
+  ],
+  "demo": null,
+  "melange": null
+}

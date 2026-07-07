@@ -1,0 +1,12 @@
+{
+  "name": "VoxScribe",
+  "slug": "VoxScribe",
+  "category": "Language & Text",
+  "tagline": "Transcribes speech and labels who spoke, fully offline.",
+  "model": "pyannote + Whisper",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

@@ -1,0 +1,12 @@
+{
+  "name": "ShelfSense",
+  "slug": "ShelfScanYOLO",
+  "category": "Vision",
+  "tagline": "Counts and boxes every product facing on a dense retail-shelf photo, on-device.",
+  "model": "YOLO11s (SKU-110K)",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

@@ -1,0 +1,13 @@
+{
+  "name": "CherryPad",
+  "slug": "AI-Keyboard",
+  "category": "Language & Text",
+  "tagline": "An AI keyboard that rewrites, replies, translates, and fixes grammar, all on-device. No text ever leaves the phone.",
+  "model": "LFM2.5-350M",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/ai-keyboard.gif",
+  "melange": null
+}

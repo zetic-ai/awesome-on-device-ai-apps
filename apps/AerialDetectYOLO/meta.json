@@ -1,0 +1,12 @@
+{
+  "name": "SkyScout",
+  "slug": "AerialDetectYOLO",
+  "category": "Vision",
+  "tagline": "Real-time aerial and drone object detection across 10 VisDrone classes, live on-device.",
+  "model": "YOLOv8s (VisDrone)",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

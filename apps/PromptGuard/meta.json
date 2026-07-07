@@ -1,0 +1,12 @@
+{
+  "name": "PromptGuard",
+  "slug": "PromptGuard",
+  "category": "Language & Text",
+  "tagline": "Flags prompt-injection and jailbreak text as benign or malicious, on-device via CoreML.",
+  "model": "Llama Prompt Guard 2",
+  "platforms": [
+    "iOS"
+  ],
+  "demo": null,
+  "melange": null
+}

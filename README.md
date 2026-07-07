@@ -2,7 +2,7 @@
 
 # 🧠 Awesome On-Device AI Apps
 
-### AI in your pocket. 18+ real apps that run 100% on your phone.
+### AI in your pocket. 36 real apps that run 100% on your phone.
 
 <img src="res/screenshots/qwen_4b_ios.gif" width="178" alt="On-device chat"> <img src="res/screenshots/translator-ocr.gif" width="178" alt="Offline translator"> <img src="res/screenshots/ainotes.gif" width="178" alt="Private AI notes"> <img src="res/screenshots/camera-vitals.gif" width="178" alt="Camera heart-rate">
 
@@ -17,7 +17,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/zetic-ai/awesome-on-device-ai-apps?style=for-the-badge)](https://github.com/zetic-ai/awesome-on-device-ai-apps/commits)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
 
-[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-3DDC84.svg?style=flat-square)](.)
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS%20%7C%20Flutter-3DDC84.svg?style=flat-square)](.)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](CONTRIBUTING.md)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da.svg?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/gqhDWfZbgU)
 
@@ -74,11 +74,16 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
 | [**Brew AI Notes**](apps/Brew-AI-Notes) | Records, transcribes & summarizes meetings, then lets you ask anything. Granola, but fully private. | `Gemma-4-E2B` | `iOS` | [Model ↗](https://mlange.zetic.ai/p/changgeun/gemma-4-E2B-it) |
+| [**CherryPad**](apps/AI-Keyboard) | An AI keyboard that rewrites, replies, translates, and fixes grammar, all on-device. No text ever leaves the phone. | `LFM2.5-350M` | `Android` `iOS` | · |
 | [**Grammar Fixer**](apps/t5_base_grammar_correction) | Real-time grammar correction as you type | `T5-base` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Team_ZETIC/t5-base-grammar-correction) |
 | [**HY-MT Translator**](apps/tencent_HY-MT) | Streaming offline machine translation with instant language swap | `Tencent HY-MT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT) |
+| [**MedASR**](apps/MedASR) | Medical-domain speech recognition, fully on-device. | `MedASR` | `Android` | · |
 | [**Offline Translator**](apps/translate-tencent_HY-MT) | Translate by text, voice, or camera/OCR, with real-time streaming and instant language swap | `Tencent HY-MT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT) |
+| [**PromptGuard**](apps/PromptGuard) | Flags prompt-injection and jailbreak text as benign or malicious, on-device via CoreML. | `Llama Prompt Guard 2` | `iOS` | · |
 | [**Qwen3 Chat**](apps/Qwen3Chat) | A private ChatGPT in your pocket, with real-time token streaming | `Qwen3-4B` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Qwen/Qwen3-4B) |
+| [**SayRight**](apps/PronunciationScoring) | Reads a sentence aloud and scores your pronunciation per word and per phoneme, fully offline. | `Citrinet-256 (phoneme CTC)` | `Flutter` | · |
 | [**Text Anonymizer**](apps/TextAnonymizer) | Auto-detects & masks PII (names, emails, phones) before any data moves | `tanaos-anonymizer-v1` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Steve/text-anonymizer-v1) |
+| [**VoxScribe**](apps/VoxScribe) | Transcribes speech and labels who spoke, fully offline. | `pyannote + Whisper` | `Flutter` | · |
 | [**Whisper ASR**](apps/whisper-tiny) | High-accuracy speech-to-text, fully offline | `Whisper Tiny` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/OpenAI/whisper-tiny-decoder) |
 
 <a id="cat-vision"></a>
@@ -90,7 +95,14 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 | [**Emotion Recognition**](apps/FaceEmotionRecognition) | Real-time facial emotion from the camera | `Emo-AffectNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/ElenaRyumina/FaceEmotionRecognition) |
 | [**Face Detection**](apps/MediaPipe-Face-Detection) | Ultra-fast selfie-range face detection | `BlazeFace` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/google/MediaPipe-Face-Detection) |
 | [**Face Landmarker**](apps/MediaPipe-Face-Landmarker) | 468-point face mesh tracking | `MediaPipe` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/google/MediaPipe-Face-Landmark) |
+| [**GlyphGo**](apps/SignTranslate) | Point your camera at a sign or menu and read the text live, fully offline. Built for travelers with no signal. | `PP-OCRv5 (DBNet + SVTR)` | `Flutter` | · |
+| [**PlateHawk**](apps/VehiclePlateYOLO) | Detects license plates in the live camera feed, frame by frame, entirely on-device. | `YOLOv8n` | `Flutter` | · |
+| [**RedactLens**](apps/LiveDocRedact) | Auto-redacts name, date-of-birth, and ID fields on IDs and forms live in the camera preview, before anything is stored. | `PP-OCRv5 (DBNet + CRNN)` | `Flutter` | · |
+| [**ShelfSense**](apps/ShelfScanYOLO) | Counts and boxes every product facing on a dense retail-shelf photo, on-device. | `YOLO11s (SKU-110K)` | `Flutter` | · |
+| [**SiteGuard**](apps/SafetyPPEYOLO) | Real-time worker PPE compliance: detects helmets, vests, and violations live on the camera feed. | `YOLOv8s (PPE)` | `Flutter` | · |
+| [**SkyScout**](apps/AerialDetectYOLO) | Real-time aerial and drone object detection across 10 VisDrone classes, live on-device. | `YOLOv8s (VisDrone)` | `Flutter` | · |
 | [**YOLO26**](apps/YOLO26) | Next-gen NMS-free object detection | `YOLO26` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Team_ZETIC/YOLO26) |
+| [**YOLOv26-Seg**](apps/Ultralytics_YOLOv26-Seg-Nano) | Real-time instance segmentation on-device with YOLOv26-Seg Nano. | `YOLOv26-Seg Nano` | `Android` | · |
 | [**YOLOv8**](apps/YOLOv8) | Real-time object detection & tracking in milliseconds | `YOLOv8n` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Ultralytics/YOLOv8n) |
 
 <a id="cat-health-wellbeing"></a>
@@ -100,6 +112,9 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
 | [**Camera Vitals**](apps/Camera-Vitals) | Contactless heart-rate from the front camera; frames never leave the phone | `EfficientPhys-rPPG` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/EfficientPhys-rPPG_camera_vitals) |
+| [**FundusGate**](apps/RetinaDRScreen) | Screens fundus photos for referable diabetic retinopathy, on-device (non-diagnostic). | `MobileNetV2` | `Flutter` | · |
+| [**GradeVue**](apps/RetinaDRGrade) | Grades diabetic-retinopathy severity from a fundus photo, on-device (non-diagnostic). | `MobileNetV2` | `Flutter` | · |
+| [**OraLens**](apps/DentalXrayDetect) | Detects caries and periapical lesions on a dental X-ray you upload, on-device (non-diagnostic). | `YOLO11n` | `Flutter` | · |
 | [**Skin Classifier**](apps/Skin-Image-Classification) | On-device skin-lesion classification with severity-aware guidance (non-diagnostic) | `Skin-Cancer ViT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Skin_Cancer-Image_Classification) |
 | [**Voice Biomarker**](apps/Voice-Biomarker) | Speech-emotion + respiratory event detection (cough, wheeze) from mic audio | `wav2vec2 · YAMNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) |
 | [**Wellbeing Screener**](apps/multimodal-screener) | Fuses live face- and voice-emotion into an explainable mood check-in | `wav2vec2 · Emo-AffectNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) |
@@ -110,6 +125,8 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
+| [**NeuTTS Nano**](apps/NeuTTSNanoApp) | On-device text-to-speech with voice cloning, via a three-stage NeuTTS Nano pipeline. | `NeuTTS Nano` | `iOS` | · |
+| [**Qwen TTS**](apps/QwenTextToSpeech) | On-device text-to-speech with a custom voice, running the Qwen3-TTS pipeline on the NPU. | `Qwen3-TTS-0.6B` | `iOS` | · |
 | [**YamNet**](apps/YamNet) | Classifies environmental sounds & audio events | `YAMNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/google/Sound%20Classification%28YAMNET%29) |
 
 <a id="cat-forecasting"></a>
@@ -119,6 +136,7 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
 | [**Chronos Forecast**](apps/ChronosTimeSeries) | Probabilistic time-series forecasting with CSV import & interactive charts | `Chronos-Bolt` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Team_ZETIC/Chronos-balt-tiny) |
+| [**SentryWave**](apps/SensorForecastTS) | Streams live sensor data, forecasts it with a quantile fan, and flags anomalies that break the band. | `Chronos-Bolt-tiny` | `Flutter` | · |
 
 <!-- CATALOG:END -->
 

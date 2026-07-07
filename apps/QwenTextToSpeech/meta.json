@@ -1,0 +1,12 @@
+{
+  "name": "Qwen TTS",
+  "slug": "QwenTextToSpeech",
+  "category": "Audio",
+  "tagline": "On-device text-to-speech with a custom voice, running the Qwen3-TTS pipeline on the NPU.",
+  "model": "Qwen3-TTS-0.6B",
+  "platforms": [
+    "iOS"
+  ],
+  "demo": null,
+  "melange": null
+}

@@ -1,0 +1,12 @@
+{
+  "name": "GlyphGo",
+  "slug": "SignTranslate",
+  "category": "Vision",
+  "tagline": "Point your camera at a sign or menu and read the text live, fully offline. Built for travelers with no signal.",
+  "model": "PP-OCRv5 (DBNet + SVTR)",
+  "platforms": [
+    "Flutter"
+  ],
+  "demo": null,
+  "melange": null
+}

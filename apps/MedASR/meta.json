@@ -1,0 +1,12 @@
+{
+  "name": "MedASR",
+  "slug": "MedASR",
+  "category": "Language & Text",
+  "tagline": "Medical-domain speech recognition, fully on-device.",
+  "model": "MedASR",
+  "platforms": [
+    "Android"
+  ],
+  "demo": null,
+  "melange": null
+}

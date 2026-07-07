@@ -1,24 +1,21 @@
 #!/usr/bin/env python3
-"""Render the GitHub social preview card (1280x640 PNG).
+"""Render the GitHub social preview cards (1280x640 PNG).
 
     python3 docs/assets/make_social_preview.py
 
-Output: docs/assets/social-preview.png
-Upload it at repo Settings -> General -> Social preview.
+Outputs:
+  docs/assets/social-preview.png             (default: the concrete claim)
+  docs/assets/social-preview-vibecoding.png  (the vibe-coding hook)
+
+Upload one at repo Settings -> General -> Social preview.
 """
 import os
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 W, H = 1280, 640
 M = 88  # left margin
-OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "social-preview.png")
+HERE = os.path.dirname(os.path.abspath(__file__))
 FONT_DIR = "/usr/share/fonts/truetype/dejavu"
-
-
-def font(name, size):
-    return ImageFont.truetype(os.path.join(FONT_DIR, name), size)
-
-
 BOLD = "DejaVuSans-Bold.ttf"
 REG = "DejaVuSans.ttf"
 
@@ -29,13 +26,16 @@ MUTED = (198, 205, 224)
 KICKER = (183, 148, 246)
 
 
+def font(name, size):
+    return ImageFont.truetype(os.path.join(FONT_DIR, name), size)
+
+
 def lerp(a, b, t):
     return int(a + (b - a) * t)
 
 
 def background():
-    top = (34, 18, 62)
-    bot = (11, 7, 22)
+    top, bot = (34, 18, 62), (11, 7, 22)
     img = Image.new("RGB", (W, H))
     px = img.load()
     for y in range(H):
@@ -43,13 +43,13 @@ def background():
         row = (lerp(top[0], bot[0], t), lerp(top[1], bot[1], t), lerp(top[2], bot[2], t))
         for x in range(W):
             px[x, y] = row
-    # soft purple glow, top-left light source
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    gd = ImageDraw.Draw(glow)
-    gd.ellipse([-200, -320, 760, 420], fill=(139, 92, 246, 70))
+    ImageDraw.Draw(glow).ellipse([-200, -320, 760, 420], fill=(139, 92, 246, 70))
     glow = glow.filter(ImageFilter.GaussianBlur(150))
     img = Image.alpha_composite(img.convert("RGBA"), glow).convert("RGB")
-    return img
+    d = ImageDraw.Draw(img)
+    d.rectangle([0, 0, 9, H], fill=(139, 92, 246))  # brand spine
+    return img, d
 
 
 def draw_spaced(draw, xy, text, fnt, fill, spacing):
@@ -61,71 +61,78 @@ def draw_spaced(draw, xy, text, fnt, fill, spacing):
 
 
 def lightning(draw, x, y, h, fill):
-    # simple bolt, height h, anchored top-left at (x, y)
     w = h * 0.55
-    pts = [
-        (x + w * 0.55, y),
-        (x + w * 0.05, y + h * 0.58),
-        (x + w * 0.45, y + h * 0.58),
-        (x + w * 0.30, y + h),
-        (x + w * 0.95, y + h * 0.38),
-        (x + w * 0.52, y + h * 0.38),
-    ]
+    pts = [(x + w * 0.55, y), (x + w * 0.05, y + h * 0.58), (x + w * 0.45, y + h * 0.58),
+           (x + w * 0.30, y + h), (x + w * 0.95, y + h * 0.38), (x + w * 0.52, y + h * 0.38)]
     draw.polygon(pts, fill=fill)
-    return w
 
 
-def main():
-    img = background()
-    d = ImageDraw.Draw(img)
+def melange_mark(d, baseline_y, size=30):
+    label = "Powered by Melange"
+    mf = font(BOLD, size)
+    tw = d.textlength(label, font=mf)
+    lightning(d, W - M - tw - 42, baseline_y + 2, size + 8, ACCENT2)
+    d.text((W - M - tw, baseline_y), label, font=mf, fill=ACCENT)
 
-    # left brand spine
-    d.rectangle([0, 0, 9, H], fill=(139, 92, 246))
 
-    # kicker
-    draw_spaced(d, (M, 92), "AWESOME ON-DEVICE AI APPS", font(BOLD, 27), KICKER, 6)
-
-    # headline
-    hl = font(BOLD, 90)
-    y1 = 156
-    x = M
-    d.text((x, y1), "36", font=hl, fill=ACCENT2)
-    x += d.textlength("36", font=hl)
-    d.text((x, y1), " AI apps that run", font=hl, fill=WHITE)
-    d.text((M, y1 + 104), "100% on your phone.", font=hl, fill=WHITE)
-
-    # subline, auto-fit width
-    sub = "No cloud   ·   $0 to run   ·   Offline   ·   No compliance wall"
-    size = 34
-    while size > 22:
-        f = font(REG, size)
-        if d.textlength(sub, font=f) <= W - 2 * M:
-            break
+def fit(d, text, name, start, minimum):
+    size = start
+    while size > minimum:
+        f = font(name, size)
+        if d.textlength(text, font=f) <= W - 2 * M:
+            return f
         size -= 1
-    d.text((M, 402), sub, font=font(REG, size), fill=MUTED)
+    return font(name, minimum)
 
-    # bottom: platform pills
+
+def render_default():
+    img, d = background()
+    draw_spaced(d, (M, 92), "AWESOME ON-DEVICE AI APPS", font(BOLD, 27), KICKER, 6)
+    hl = font(BOLD, 90)
+    x = M
+    d.text((x, 156), "36", font=hl, fill=ACCENT2)
+    x += d.textlength("36", font=hl)
+    d.text((x, 156), " AI apps that run", font=hl, fill=WHITE)
+    d.text((M, 260), "100% on your phone.", font=hl, fill=WHITE)
+    sub = "No cloud   ·   $0 to run   ·   Offline   ·   No compliance wall"
+    d.text((M, 402), sub, font=fit(d, sub, REG, 34, 22), fill=MUTED)
     py, ph = 520, 58
     pf = font(BOLD, 30)
     x = M
     for label in ("Android", "iOS", "Flutter"):
-        tw = d.textlength(label, font=pf)
-        pw = tw + 52
-        d.rounded_rectangle([x, py, x + pw, py + ph], radius=ph // 2,
-                            outline=ACCENT, width=3)
-        d.text((x + 26, py + (ph - 38) // 2), label, font=pf, fill=WHITE)
+        pw = d.textlength(label, font=pf) + 52
+        d.rounded_rectangle([x, py, x + pw, py + ph], radius=ph // 2, outline=ACCENT, width=3)
+        d.text((x + 26, py + 10), label, font=pf, fill=WHITE)
         x += pw + 20
+    melange_mark(d, py + 12, 32)
+    out = os.path.join(HERE, "social-preview.png")
+    img.save(out)
+    print("wrote", out)
 
-    # bottom-right: powered by Melange
-    mf = font(BOLD, 32)
-    label = "Powered by Melange"
-    tw = d.textlength(label, font=mf)
-    bolt_w = lightning(d, W - M - tw - 44, py + 8, 42, ACCENT2)
-    d.text((W - M - tw, py + (ph - 42) // 2), label, font=mf, fill=ACCENT)
 
-    img.save(OUT)
-    print("wrote", OUT, img.size)
+def render_vibecoding():
+    img, d = background()
+    hook = font(BOLD, 62)
+    d.text((M, 84), "Your AI coding agent", font=hook, fill=WHITE)
+    x = M
+    d.text((x, 160), "can't", font=hook, fill=ACCENT2)
+    x += d.textlength("can't", font=hook)
+    d.text((x, 160), " build on-device apps.", font=hook, fill=WHITE)
+
+    d.rounded_rectangle([M, 286, M + 96, 292], radius=3, fill=ACCENT)  # beat
+
+    turn = font(BOLD, 84)
+    d.text((M, 322), "These 36 can.", font=turn, fill=ACCENT2)
+    sub = "Real apps, running 100% on the phone.   Private · $0 · Offline."
+    d.text((M, 430), sub, font=fit(d, sub, REG, 33, 22), fill=MUTED)
+
+    draw_spaced(d, (M, 560), "AWESOME ON-DEVICE AI APPS", font(BOLD, 24), KICKER, 4)
+    melange_mark(d, 558, 30)
+    out = os.path.join(HERE, "social-preview-vibecoding.png")
+    img.save(out)
+    print("wrote", out)
 
 
 if __name__ == "__main__":
-    main()
+    render_default()
+    render_vibecoding()

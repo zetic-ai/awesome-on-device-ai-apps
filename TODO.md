@@ -72,8 +72,9 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
 - [ ] **These 18 apps came from UNMERGED PRs** (not yet reviewed/merged upstream). Treat them as
       unverified: build + run each on a device, confirm quality, and fix or drop any that fall
       below the "would a stranger use this?" bar.
-- [ ] **Fill in `melange` links** in the 18 new `meta.json` files (set to `null` because the
-      model pages were not verified). Most follow `ajayshah/<AppName>`; confirm and add.
+- [x] **Fill in `melange` links** in the 18 new `meta.json` files. Done: pulled the exact
+      model id each app loads via the SDK (`ajayshah/*`, `jathin-zetic/*`, `vaibhav-zetic/*`,
+      `Steve/*`). Multi-model apps link their primary model. Confirm each page is public.
 - [ ] **Demo GIFs** for the new apps (all `demo: null` except AI-Keyboard). Several ship input
       samples under `demo_images/`, but not a running-app GIF.
 - [ ] **Flutter is now a first-class platform** (12 of the new apps are Flutter). The hero badge

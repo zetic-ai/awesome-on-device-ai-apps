@@ -1,0 +1,53 @@
+name: "📱 New app"
+description: "Tell us about an on-device app you're adding (or want to add)."
+title: "[App] <name>"
+labels: ["new-app"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: App name
+      placeholder: "Offline Translator"
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - Language & Text
+        - Vision
+        - Health & Wellbeing
+        - Audio
+        - Forecasting
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model
+      placeholder: "Qwen3-4B"
+    validations:
+      required: true
+  - type: checkboxes
+    id: platforms
+    attributes:
+      label: Platforms
+      options:
+        - label: Android
+        - label: iOS
+  - type: textarea
+    id: what
+    attributes:
+      label: What does it do?
+      description: One or two lines a user would repeat to a friend.
+    validations:
+      required: true
+  - type: checkboxes
+    id: ondevice
+    attributes:
+      label: On-device
+      options:
+        - label: Inference runs 100% on the device (no cloud call for the model)
+          required: true

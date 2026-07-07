@@ -1,0 +1,13 @@
+{
+  "name": "Camera Vitals",
+  "slug": "Camera-Vitals",
+  "category": "Health & Wellbeing",
+  "tagline": "Contactless heart-rate from the front camera — frames never leave the phone",
+  "model": "EfficientPhys-rPPG",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/camera-vitals.gif",
+  "melange": "https://mlange.zetic.ai/p/realtonypark/EfficientPhys-rPPG_camera_vitals"
+}

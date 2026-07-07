@@ -1,0 +1,13 @@
+{
+  "name": "Voice Biomarker",
+  "slug": "Voice-Biomarker",
+  "category": "Health & Wellbeing",
+  "tagline": "Speech-emotion + respiratory event detection (cough, wheeze) from mic audio",
+  "model": "wav2vec2 · YAMNet",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/voice-biomarker1.gif",
+  "melange": "https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "HY-MT Translator",
+  "slug": "tencent_HY-MT",
+  "category": "Language & Text",
+  "tagline": "Streaming offline machine translation with instant language swap",
+  "model": "Tencent HY-MT",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/tencent_hy_mt_ios.png",
+  "melange": "https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT"
+}

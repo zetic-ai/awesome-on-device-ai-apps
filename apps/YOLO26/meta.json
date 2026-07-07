@@ -1,0 +1,13 @@
+{
+  "name": "YOLO26",
+  "slug": "YOLO26",
+  "category": "Vision",
+  "tagline": "Next-gen NMS-free object detection",
+  "model": "YOLO26",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": null,
+  "melange": "https://mlange.zetic.ai/p/Team_ZETIC/YOLO26"
+}

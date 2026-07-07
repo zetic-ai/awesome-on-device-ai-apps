@@ -1,0 +1,13 @@
+{
+  "name": "Chronos Forecast",
+  "slug": "ChronosTimeSeries",
+  "category": "Forecasting",
+  "tagline": "Probabilistic time-series forecasting with CSV import & interactive charts",
+  "model": "Chronos-Bolt",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/chronos-recording-ios.gif",
+  "melange": "https://mlange.zetic.ai/p/Team_ZETIC/Chronos-balt-tiny"
+}

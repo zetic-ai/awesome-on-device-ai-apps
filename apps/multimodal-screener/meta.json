@@ -1,0 +1,13 @@
+{
+  "name": "Wellbeing Screener",
+  "slug": "multimodal-screener",
+  "category": "Health & Wellbeing",
+  "tagline": "Fuses live face- and voice-emotion into an explainable mood check-in",
+  "model": "wav2vec2 · Emo-AffectNet",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/screener.gif",
+  "melange": "https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition"
+}

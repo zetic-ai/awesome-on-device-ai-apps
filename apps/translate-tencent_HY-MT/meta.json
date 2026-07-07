@@ -1,0 +1,13 @@
+{
+  "name": "Offline Translator",
+  "slug": "translate-tencent_HY-MT",
+  "category": "Language & Text",
+  "tagline": "Translate by text, voice, or camera/OCR — real-time, instant language swap, zero signal needed",
+  "model": "Tencent HY-MT",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/translator-ocr.gif",
+  "melange": "https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT"
+}

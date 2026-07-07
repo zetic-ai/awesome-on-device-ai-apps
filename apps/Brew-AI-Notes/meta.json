@@ -1,0 +1,12 @@
+{
+  "name": "Brew — AI Notes",
+  "slug": "Brew-AI-Notes",
+  "category": "Language & Text",
+  "tagline": "Records, transcribes & summarizes meetings, then lets you ask anything. Granola, but fully private.",
+  "model": "Gemma-4-E2B",
+  "platforms": [
+    "iOS"
+  ],
+  "demo": "res/screenshots/ainotes.gif",
+  "melange": "https://mlange.zetic.ai/p/changgeun/gemma-4-E2B-it"
+}

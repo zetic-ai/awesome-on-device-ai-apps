@@ -1,0 +1,40 @@
+name: "🐛 Bug report"
+description: "Something in an app doesn't work."
+title: "[Bug] <app>: <summary>"
+labels: ["bug"]
+body:
+  - type: input
+    id: app
+    attributes:
+      label: Which app?
+      placeholder: "apps/Qwen3Chat"
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options: [Android, iOS]
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Device & OS
+      placeholder: "Pixel 8 Pro, Android 15 / iPhone 15 Pro, iOS 18"
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what happened instead? Logs/screenshots help.
+    validations:
+      required: true
+  - type: checkboxes
+    id: realdevice
+    attributes:
+      label: Confirm
+      options:
+        - label: I ran this on a physical device (not the simulator/emulator)
+          required: true

@@ -1,0 +1,13 @@
+{
+  "name": "Whisper ASR",
+  "slug": "whisper-tiny",
+  "category": "Language & Text",
+  "tagline": "High-accuracy speech-to-text, fully offline",
+  "model": "Whisper Tiny",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": null,
+  "melange": "https://mlange.zetic.ai/p/OpenAI/whisper-tiny-decoder"
+}

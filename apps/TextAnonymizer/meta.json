@@ -1,0 +1,13 @@
+{
+  "name": "Text Anonymizer",
+  "slug": "TextAnonymizer",
+  "category": "Language & Text",
+  "tagline": "Auto-detects & masks PII (names, emails, phones) before any data moves",
+  "model": "tanaos-anonymizer-v1",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": null,
+  "melange": "https://mlange.zetic.ai/p/Steve/text-anonymizer-v1"
+}

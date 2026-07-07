@@ -1,0 +1,13 @@
+{
+  "name": "Qwen3 Chat",
+  "slug": "Qwen3Chat",
+  "category": "Language & Text",
+  "tagline": "A private ChatGPT in your pocket — full LLM chat with real-time token streaming",
+  "model": "Qwen3-4B",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/qwen_4b_ios.gif",
+  "melange": "https://mlange.zetic.ai/p/Qwen/Qwen3-4B"
+}

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discord
+    url: https://discord.gg/gqhDWfZbgU
+    about: Questions, help getting an app running, or just to say hi.
+  - name: 📖 Melange Docs
+    url: https://docs.zetic.ai
+    about: How on-device conversion and the SDK work.

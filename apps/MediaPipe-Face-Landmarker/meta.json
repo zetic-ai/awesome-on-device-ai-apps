@@ -1,0 +1,13 @@
+{
+  "name": "Face Landmarker",
+  "slug": "MediaPipe-Face-Landmarker",
+  "category": "Vision",
+  "tagline": "468-point face mesh tracking",
+  "model": "MediaPipe",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": null,
+  "melange": "https://mlange.zetic.ai/p/google/MediaPipe-Face-Landmark"
+}

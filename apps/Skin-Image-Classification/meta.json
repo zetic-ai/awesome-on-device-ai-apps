@@ -1,0 +1,13 @@
+{
+  "name": "Skin Classifier",
+  "slug": "Skin-Image-Classification",
+  "category": "Health & Wellbeing",
+  "tagline": "On-device skin-lesion classification with severity-aware guidance (non-diagnostic)",
+  "model": "Skin-Cancer ViT",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/skin-classification.gif",
+  "melange": "https://mlange.zetic.ai/p/realtonypark/Skin_Cancer-Image_Classification"
+}

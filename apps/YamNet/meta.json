@@ -1,0 +1,13 @@
+{
+  "name": "YamNet",
+  "slug": "YamNet",
+  "category": "Audio",
+  "tagline": "Classifies environmental sounds & audio events",
+  "model": "YAMNet",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": null,
+  "melange": "https://mlange.zetic.ai/p/google/Sound%20Classification(YAMNET)"
+}

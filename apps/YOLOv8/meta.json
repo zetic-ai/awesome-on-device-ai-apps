@@ -1,0 +1,13 @@
+{
+  "name": "YOLOv8",
+  "slug": "YOLOv8",
+  "category": "Vision",
+  "tagline": "Real-time object detection & tracking in milliseconds",
+  "model": "YOLOv8n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": null,
+  "melange": "https://mlange.zetic.ai/p/Ultralytics/YOLOv8n"
+}

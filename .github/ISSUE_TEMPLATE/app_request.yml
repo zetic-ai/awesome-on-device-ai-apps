@@ -1,0 +1,22 @@
+name: "💡 App request"
+description: "Suggest a model or use case you'd like turned into an on-device app."
+title: "[Request] <what>"
+labels: ["app-request"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What do you wish ran on your phone?
+      placeholder: "An on-device app that reads restaurant menus and translates them live."
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model or Hugging Face link (if you have one in mind)
+      placeholder: "https://huggingface.co/..."
+  - type: textarea
+    id: why
+    attributes:
+      label: Why on-device?
+      description: Privacy, offline, latency, cost — what makes local the right call here?

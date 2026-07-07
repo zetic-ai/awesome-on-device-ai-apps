@@ -1,0 +1,13 @@
+{
+  "name": "Grammar Fixer",
+  "slug": "t5_base_grammar_correction",
+  "category": "Language & Text",
+  "tagline": "Real-time grammar correction as you type",
+  "model": "T5-base",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": "res/screenshots/t5-grammar-correction_ios.png",
+  "melange": "https://mlange.zetic.ai/p/Team_ZETIC/t5-base-grammar-correction"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Face Detection",
+  "slug": "MediaPipe-Face-Detection",
+  "category": "Vision",
+  "tagline": "Ultra-fast selfie-range face detection",
+  "model": "BlazeFace",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": null,
+  "melange": "https://mlange.zetic.ai/p/google/MediaPipe-Face-Detection"
+}

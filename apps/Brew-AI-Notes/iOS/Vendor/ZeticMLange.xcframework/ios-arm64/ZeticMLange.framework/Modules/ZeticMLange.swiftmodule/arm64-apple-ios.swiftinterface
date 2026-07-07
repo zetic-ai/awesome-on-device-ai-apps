@@ -1,0 +1,883 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios16.6 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name ZeticMLange
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=swift-6 -interface-compiler-version 6.2.3
+import CommonCrypto
+import CoreML
+import CryptoKit
+import Darwin
+import Foundation
+import MachO
+import Security
+import Swift
+import SwiftUI
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public class LLaMACppTargetModel : ZeticMLange.LLMTargetModel {
+  final public let target: ZeticMLange.LLMTarget
+  final public let quantType: ZeticMLange.LLMQuantType
+  public init(_ path: Swift.String, _ quantType: ZeticMLange.LLMQuantType, _ apType: ZeticMLange.APType = .CPU, _ initOption: ZeticMLange.LLMInitOption = LLMInitOption()) throws
+  convenience public init(_ path: Swift.String, _ quantType: ZeticMLange.LLMQuantType, _ cleanupPolicy: ZeticMLange.LLMKVCacheCleanupPolicy) throws
+  public func run(_ text: Swift.String) throws -> ZeticMLange.LLMRunResult
+  public func forceDeinit()
+  public func waitForNextToken() -> ZeticMLange.LLMNextTokenResult
+  public func cleanUp() throws
+  public func benchmark(inputTokens: Swift.Int, outputTokens: Swift.Int) throws -> ZeticMLange.LLMBenchmarkRunResult
+  @objc deinit
+}
+public class LLaMACppTargetModelWrapper {
+  public init(_ modelPath: Swift.String, _ apType: ZeticMLange.APType, _ initOption: ZeticMLange.LLMInitOption) throws
+  @objc deinit
+}
+public class TFLiteTargetModel : ZeticMLange.TargetModel {
+  final public let target: ZeticMLange.Target
+  final public let apType: ZeticMLange.APType
+  final public let inputTensorOrder: [Swift.Int]
+  final public let outputTensorOrder: [Swift.Int]
+  final public let numInputs: Swift.Int
+  final public let numOutputs: Swift.Int
+  public init(_ modelPath: Foundation.URL, _ enableCoreMl: Swift.Bool, _ targetModelIO: ZeticMLange.TargetModelIO, _ inputTensorShapes: [[Swift.Int]], target: ZeticMLange.Target, apType: ZeticMLange.APType = .NA) throws
+  public func benchmark(_ inputs: [Foundation.Data], _ outputs: inout [Foundation.Data]) throws -> ZeticMLange.NativeInferenceResult
+  public func run(_ inputs: [Foundation.Data], _ outputs: inout [Foundation.Data]) throws
+  public func createInputDataArray() -> [Foundation.Data]
+  public func createOutputDataArray() -> [Foundation.Data]
+  public func isInitialized() -> Swift.Bool
+  @objc deinit
+}
+public class TFLiteTargetModelWrapper {
+  public init(_ modelFilePath: Swift.String, _ enableCoreMl: Swift.Bool) throws
+  @objc deinit
+}
+public class LLMBenchmarkModel {
+  public static let LOG_TAG: Swift.String
+  public static let ERROR_TAG: Swift.String
+  public static let RESULT_TAG: Swift.String
+  public init()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func benchmark(_ target: ZeticMLange.LLMTarget, _ path: Foundation.URL, _ quantType: ZeticMLange.LLMQuantType, _ apType: ZeticMLange.APType = .CPU) -> ZeticMLange.LLMBenchmarkResult?
+  #endif
+  @objc deinit
+}
+public class LLMBenchmarkResult : Swift.Codable {
+  final public let path: Swift.String
+  final public let target: ZeticMLange.LLMTarget
+  final public let quantType: ZeticMLange.LLMQuantType
+  final public let apType: ZeticMLange.APType
+  final public let targetModelBenchmarkResult: ZeticMLange.LLMTargetModelBenchmarkResult
+  public init(path: Swift.String, target: ZeticMLange.LLMTarget, quantType: ZeticMLange.LLMQuantType, apType: ZeticMLange.APType, targetModelBenchmarkResult: ZeticMLange.LLMTargetModelBenchmarkResult)
+  public func toJsonData() -> [Swift.String : Any]
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LLMBenchmarkResults : Swift.Codable {
+  public var results: [ZeticMLange.LLMBenchmarkResult]
+  public init(_ results: [ZeticMLange.LLMBenchmarkResult] = [])
+  public func toJsonData() -> [Swift.String : Any]
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class LLMTargetModelBenchmarkResult : Swift.Codable {
+  final public let tps: Swift.Float
+  final public let ttft: Swift.UInt64
+  final public let promptTokens: Swift.Int
+  final public let generatedTokens: Swift.Int
+  final public let modelLoadMemory: ZeticMLange.MemoryResult
+  final public let inferenceMemory: ZeticMLange.MemoryResult
+  final public let quantType: ZeticMLange.LLMQuantType
+  public init(tps: Swift.Float, ttft: Swift.UInt64, promptTokens: Swift.Int, generatedTokens: Swift.Int, modelLoadMemory: ZeticMLange.MemoryResult, inferenceMemory: ZeticMLange.MemoryResult, quantType: ZeticMLange.LLMQuantType)
+  public func toJsonData() -> [Swift.String : Any]
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public func measureMemory<T>(body: () throws -> T) throws -> ZeticMLange.MemoryRunResult<T>
+public class MemoryResult : Swift.Codable {
+  final public let peak: Swift.UInt64
+  final public let min: Swift.UInt64
+  final public let usage: Swift.UInt64
+  public init(peak: Swift.UInt64, min: Swift.UInt64, usage: Swift.UInt64)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class MemoryRunResult<T> {
+  final public let value: T
+  final public let result: ZeticMLange.MemoryResult
+  public init(value: T, result: ZeticMLange.MemoryResult)
+  @objc deinit
+}
+public class BenchmarkModel {
+  public static let DEBUG_TAG: Swift.String
+  public static let ERROR_TAG: Swift.String
+  public static let RESULT_TAG: Swift.String
+  public init()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func benchmark(_ target: ZeticMLange.Target, _ path: Foundation.URL, _ inputs: [Foundation.Data] = [], _ originalOutputs: [[Swift.Float]] = [], _ metadata: ZeticMLange.ZeticMLangeModelMetadata) -> [ZeticMLange.BenchmarkResult?]
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func benchmarkAll(_ personalKey: Swift.String, _ name: Swift.String, _ version: Swift.Int?, onResult: (ZeticMLange.BenchmarkResult) -> Swift.Void) throws
+  #endif
+  @objc deinit
+}
+public class BenchmarkResult : Swift.Codable {
+  final public let path: Swift.String
+  final public let target: ZeticMLange.Target
+  final public let targetModelBenchmarkResult: ZeticMLange.TargetModelBenchmarkResult
+  public init(path: Swift.String, target: ZeticMLange.Target, targetModelBenchmarkResult: ZeticMLange.TargetModelBenchmarkResult)
+  public func toJsonData() -> [Swift.String : Any]
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public class BenchmarkResults : Swift.Codable {
+  public var results: [ZeticMLange.BenchmarkResult]
+  public init(_ results: [ZeticMLange.BenchmarkResult] = [])
+  public func toJsonData() -> [Swift.String : Any]
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public struct DeviceMetadata : Swift.Codable {
+  public static let hardware: Swift.String
+  public static let brand: Swift.String
+  public static let device: Swift.String
+  public static let machineIdentifier: Swift.String
+  public static let realDevice: Swift.String
+  public static let modelIdentifier: Swift.String
+  public static let soc: Swift.String
+  public static let osVersion: Swift.String
+  public static func toJsonData() -> [Swift.String : Any]
+  public static func log(debugTag: Swift.String = BenchmarkModel.DEBUG_TAG)
+  public static func isNpuAllowedForFreeTierDevice() -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class TargetModelBenchmarkResult : Swift.Codable {
+  final public let nativeInferenceResult: ZeticMLange.NativeInferenceResult
+  final public let snrs: [Swift.Float]
+  final public let apType: ZeticMLange.APType
+  final public let modelLoadMemory: ZeticMLange.MemoryResult
+  final public let inferenceMemory: ZeticMLange.MemoryResult
+  public init(nativeInferenceResult: ZeticMLange.NativeInferenceResult, snrs: [Swift.Float], apType: ZeticMLange.APType, modelLoadMemory: ZeticMLange.MemoryResult, inferenceMemory: ZeticMLange.MemoryResult)
+  public func toJsonData() -> [Swift.String : Any]
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+public struct NativeInferenceResult : Swift.Codable {
+  public let code: Swift.Int32
+  public let inferenceLatency: Swift.UInt64
+  public let tensorCopyLatency: Swift.UInt64
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class NativeInferenceResults : Swift.Codable {
+  final public let value: [ZeticMLange.NativeInferenceResult]
+  public init(value: [ZeticMLange.NativeInferenceResult])
+  public func median() -> ZeticMLange.NativeInferenceResult
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers final public class ModelCacheManager {
+  public static let shared: ZeticMLange.ModelCacheManager
+  public init()
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func removeGeneral(name: Swift.String, version: Swift.Int? = nil, target: ZeticMLange.Target? = nil, apType: ZeticMLange.APType? = nil) throws -> ZeticMLange.CacheDeleteResult
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func removeLlm(name: Swift.String, version: Swift.Int? = nil, target: ZeticMLange.LLMTarget? = nil, quantType: ZeticMLange.LLMQuantType? = nil) throws -> ZeticMLange.CacheDeleteResult
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func removeHf(repoId: Swift.String, manifestDir: Swift.String? = nil, revision: Swift.String? = nil) throws -> ZeticMLange.CacheDeleteResult
+  #endif
+  final public func removeAll() throws -> ZeticMLange.CacheDeleteResult
+  final public func prune() throws -> ZeticMLange.CachePruneResult
+  @objc deinit
+}
+public enum ZeticMLangeCacheError : Swift.Error, Foundation.LocalizedError {
+  case artifactInUse(Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public var errorDescription: Swift.String? {
+    get
+  }
+  #endif
+}
+public enum ZeticMLangeCacheHandlingPolicy {
+  case REMOVE_OVERLAPPING
+  case KEEP_EXISTING
+  public static func == (a: ZeticMLange.ZeticMLangeCacheHandlingPolicy, b: ZeticMLange.ZeticMLangeCacheHandlingPolicy) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct CacheDeleteResult : Swift.Equatable {
+  public let deletedFiles: Swift.Int
+  public let deletedBytes: Swift.Int64
+  public let deletedEntries: Swift.Int
+  public init(deletedFiles: Swift.Int = 0, deletedBytes: Swift.Int64 = 0, deletedEntries: Swift.Int = 0)
+  public static func == (a: ZeticMLange.CacheDeleteResult, b: ZeticMLange.CacheDeleteResult) -> Swift.Bool
+}
+public struct CachePruneResult : Swift.Equatable {
+  public let deletedFiles: Swift.Int
+  public let deletedBytes: Swift.Int64
+  public let deletedEntries: Swift.Int
+  public let deletedArtifacts: Swift.Int
+  public init(deletedFiles: Swift.Int = 0, deletedBytes: Swift.Int64 = 0, deletedEntries: Swift.Int = 0, deletedArtifacts: Swift.Int = 0)
+  public static func == (a: ZeticMLange.CachePruneResult, b: ZeticMLange.CachePruneResult) -> Swift.Bool
+}
+public enum APType : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case CPU
+  case GPU
+  case NPU
+  case NA
+  public static var actualAPType: [ZeticMLange.APType] {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func fromName(_ s: Swift.String) -> ZeticMLange.APType?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.APType]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.APType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Checksum {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func computeSHA256(at path: Swift.String) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func computeMD5(at path: Swift.String) -> Swift.String?
+  #endif
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class DataUtils {
+  public static func dataToFloatArray(_ data: Foundation.Data) -> [Swift.Float]
+  @objc deinit
+}
+public enum ModelMode : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case RUN_AUTO
+  case RUN_FP32
+  case RUN_QUANTIZED
+  case RUN_SPEED
+  case RUN_ACCURACY
+  case RUN_REGULAR
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.ModelMode]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.ModelMode] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class NativeResult {
+  @objc deinit
+}
+public enum QuantType : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case FP32
+  case FP16
+  case INT
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.QuantType]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.QuantType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum SocManufacturer : Swift.String, Swift.Codable {
+  case apple
+  case google
+  case unreleased
+  case `default`
+  public init(from decoder: any Swift.Decoder) throws
+  public static var current: ZeticMLange.SocManufacturer {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct TargetModelPriorityFactor {
+  public init(_ target: ZeticMLange.Target, _ apType: ZeticMLange.APType)
+}
+@objc @_hasMissingDesignatedInitializers public class ZeticMLangeError : Foundation.NSError {
+  public init(_ domain: Swift.String, _ userInfo: Swift.String)
+  @objc override dynamic public var description: Swift.String {
+    @objc get
+  }
+  @objc deinit
+}
+public class HfApiClient {
+  public init(networkClient: ZeticMLange.NetworkClient = NetworkClient())
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func fetchModelInfo(repoId: Swift.String, token: Swift.String? = nil, revision: Swift.String? = nil) async throws -> ZeticMLange.HfModelInfo
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func fetchFileText(repoId: Swift.String, token: Swift.String? = nil, repoPath: Swift.String, revision: Swift.String? = nil) async throws -> Swift.String
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func downloadFile(repoId: Swift.String, token: Swift.String? = nil, repoPath: Swift.String, localPath: Swift.String, revision: Swift.String? = nil, onProgress: ((Swift.Float) -> Swift.Void)? = nil) async throws -> Swift.String
+  #endif
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class HfFetcher {
+  public init(apiClient: ZeticMLange.HfApiClient = HfApiClient())
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func fetchModel(repoId: Swift.String, token: Swift.String? = nil, revision: Swift.String? = nil, destinationDir: Swift.String, onProgress: ((Swift.Float) -> Swift.Void)? = nil) async throws -> (path: Swift.String, manifest: ZeticMLange.ZtcManifestMetadata)
+  #endif
+  @objc deinit
+}
+public struct HfModelInfo : Swift.Codable {
+  public let sha: Swift.String
+  public let siblings: [ZeticMLange.HfSibling]?
+  public var files: [Swift.String] {
+    get
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct HfSibling : Swift.Codable {
+  public let rfilename: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ZeticMLangeHFLoadResult {
+  public let metadata: ZeticMLange.ZtcGeneralModelMetadata
+  public let modelKey: Swift.String
+  public let modulePath: Swift.String
+  public let loader: ZeticMLange.ZtcLoader
+}
+public class ZeticMLangeHFLoader {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(repoId: Swift.String, userAccessToken: Swift.String? = nil, mlangePersonalKey: Swift.String? = nil, baseDirectory: Foundation.URL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0])
+  #endif
+  public func load(index: Swift.Int = 0) async throws -> ZeticMLange.ZeticMLangeHFLoadResult
+  @objc deinit
+}
+public enum LLMDataSetType : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case MMLU
+  case TRUTHFULQA
+  case CNN_DAILYMAIL
+  case GSM8K
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.LLMDataSetType]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.LLMDataSetType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct LLMInitOption {
+  public let kvCacheCleanupPolicy: ZeticMLange.LLMKVCacheCleanupPolicy
+  public let nCtx: Swift.Int
+  public init(kvCacheCleanupPolicy: ZeticMLange.LLMKVCacheCleanupPolicy = .CLEAN_UP_ON_FULL, nCtx: Swift.Int = 2048)
+}
+public enum LLMKVCacheCleanupPolicy : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case CLEAN_UP_ON_FULL
+  case DO_NOT_CLEAN_UP
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.LLMKVCacheCleanupPolicy]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.LLMKVCacheCleanupPolicy] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum LLMModelMode : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case RUN_AUTO
+  case RUN_SPEED
+  case RUN_ACCURACY
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.LLMModelMode]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.LLMModelMode] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class LLMModelWrapper {
+  @objc deinit
+}
+public enum LLMQuantType : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case GGUF_QUANT_ORG
+  case GGUF_QUANT_F16
+  case GGUF_QUANT_BF16
+  case GGUF_QUANT_Q8_0
+  case GGUF_QUANT_Q6_K
+  case GGUF_QUANT_Q4_K_M
+  case GGUF_QUANT_Q3_K_M
+  case GGUF_QUANT_Q2_K
+  case GGUF_QUANT_NUM_TYPES
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.LLMQuantType]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.LLMQuantType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum LLMTarget : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case LLAMA_CPP
+  case MLLM
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.LLMTarget]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.LLMTarget] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct LLMRunResult {
+  public let promptTokens: Swift.Int
+  public init(promptTokens: Swift.Int)
+}
+public struct LLMNextTokenResult {
+  public let token: Swift.String
+  public let generatedTokens: Swift.Int
+  public let code: Swift.Int
+  public var isFinished: Swift.Bool {
+    get
+  }
+  public init(token: Swift.String, generatedTokens: Swift.Int, code: Swift.Int)
+}
+public struct LLMBenchmarkRunResult {
+  public let ttftNs: Swift.UInt64
+  public let promptTokens: Swift.Int
+  public let tps: Swift.Float
+  public let generatedTokens: Swift.Int
+  public init(ttftNs: Swift.UInt64, promptTokens: Swift.Int, tps: Swift.Float, generatedTokens: Swift.Int)
+}
+public protocol LLMTargetModel {
+  var target: ZeticMLange.LLMTarget { get }
+  var quantType: ZeticMLange.LLMQuantType { get }
+  func run(_ text: Swift.String) throws -> ZeticMLange.LLMRunResult
+  func benchmark(inputTokens: Swift.Int, outputTokens: Swift.Int) throws -> ZeticMLange.LLMBenchmarkRunResult
+  func waitForNextToken() -> ZeticMLange.LLMNextTokenResult
+  func forceDeinit()
+  func cleanUp() throws
+}
+public struct LLMTargetModelPriorityFactor {
+  public init(_ targetIndex: Swift.Int32, _ quantTypeIndex: Swift.Int32)
+  public func getTarget() -> ZeticMLange.LLMTarget
+  public func getQuantType() -> ZeticMLange.LLMQuantType
+}
+public class ZeticMLangeLLMModel {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(personalKey: Swift.String, name: Swift.String, version: Swift.Int? = nil, target: ZeticMLange.LLMTarget, quantType: ZeticMLange.LLMQuantType, apType: ZeticMLange.APType = .CPU, cacheHandlingPolicy: ZeticMLange.ZeticMLangeCacheHandlingPolicy = .REMOVE_OVERLAPPING, initOption: ZeticMLange.LLMInitOption = LLMInitOption(), onDownload: ((Swift.Float) -> Swift.Void)? = nil) throws
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(personalKey: Swift.String, name: Swift.String, version: Swift.Int? = nil, modelMode: ZeticMLange.LLMModelMode = LLMModelMode.RUN_AUTO, dataSetType: ZeticMLange.LLMDataSetType? = nil, cacheHandlingPolicy: ZeticMLange.ZeticMLangeCacheHandlingPolicy = .REMOVE_OVERLAPPING, initOption: ZeticMLange.LLMInitOption = LLMInitOption(), onDownload: ((Swift.Float) -> Swift.Void)? = nil) throws
+  #endif
+  public func run(_ text: Swift.String) throws -> ZeticMLange.LLMRunResult
+  public func benchmark(inputTokens: Swift.Int, outputTokens: Swift.Int) throws -> ZeticMLange.LLMBenchmarkRunResult
+  public func waitForNextToken() -> ZeticMLange.LLMNextTokenResult
+  public func forceDeinit()
+  public func cleanUp() throws
+  @objc deinit
+}
+public enum Target : Swift.Int, Swift.CaseIterable, Swift.Codable {
+  case ZETIC_MLANGE_TARGET_TORCH
+  case ZETIC_MLANGE_TARGET_TFLITE_FP32
+  case ZETIC_MLANGE_TARGET_TFLITE_FP16
+  case ZETIC_MLANGE_TARGET_TFLITE_QUANT
+  case ZETIC_MLANGE_TARGET_ORT
+  case ZETIC_MLANGE_TARGET_ORT_NNAPI
+  case ZETIC_MLANGE_TARGET_QNN
+  case ZETIC_MLANGE_TARGET_QNN_FP16
+  case ZETIC_MLANGE_TARGET_QNN_QUANT
+  case ZETIC_MLANGE_TARGET_COREML
+  case ZETIC_MLANGE_TARGET_COREML_FP32
+  case ZETIC_MLANGE_TARGET_COREML_QUANT
+  case ZETIC_MLANGE_TARGET_NEUROPILOT
+  case ZETIC_MLANGE_TARGET_NEUROPILOT_QUANT
+  case ZETIC_MLANGE_TARGET_EXYNOS
+  case ZETIC_MLANGE_TARGET_EXYNOS_QUANT
+  case ZETIC_MLANGE_TARGET_KIRIN
+  case ZETIC_MLANGE_TARGET_KIRIN_QUANT
+  case ZETIC_MLANGE_TARGET_GGML
+  case ZETIC_MLANGE_TARGET_GGML_QUANT
+  case ZETIC_MLANGE_TARGET_MTB
+  case ZETIC_MLANGE_TARGET_MTB_QUANT
+  case ZETIC_MLANGE_TARGET_LITERT_FP32
+  case ZETIC_MLANGE_TARGET_LITERT_FP16
+  case ZETIC_MLANGE_TARGET_LITERT_QUANT
+  case ZETIC_MLANGE_TARGET_NUM_MODELS
+  case ZETIC_MLANGE_TARGET_NUM_SLOTS
+  case ZETIC_MLANGE_TARGET_FAIL
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias AllCases = [ZeticMLange.Target]
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [ZeticMLange.Target] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol TargetModel {
+  var target: ZeticMLange.Target { get }
+  var apType: ZeticMLange.APType { get }
+  func isInitialized() -> Swift.Bool
+  func benchmark(_ inputs: [Foundation.Data], _ outputs: inout [Foundation.Data]) throws -> ZeticMLange.NativeInferenceResult
+  func run(_ inputs: [Foundation.Data], _ outputs: inout [Foundation.Data]) throws
+  var numInputs: Swift.Int { get }
+  var numOutputs: Swift.Int { get }
+  var inputTensorOrder: [Swift.Int] { get }
+  var outputTensorOrder: [Swift.Int] { get }
+}
+@_hasMissingDesignatedInitializers public class TargetModelIO {
+  @objc deinit
+}
+public class ZeticMLangeHFModel {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(_ repoId: Swift.String, userAccessToken: Swift.String? = nil, index: Swift.Int = 0, cacheHandlingPolicy: ZeticMLange.ZeticMLangeCacheHandlingPolicy = .REMOVE_OVERLAPPING) async throws
+  #endif
+  public func run(inputs: [ZeticMLange.Tensor] = []) throws -> [ZeticMLange.Tensor]
+  @objc deinit
+}
+public class ZeticMLangeModel {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(personalKey: Swift.String, name: Swift.String, version: Swift.Int? = nil, modelMode: ZeticMLange.ModelMode = .RUN_AUTO, quantType: ZeticMLange.QuantType? = nil, cacheHandlingPolicy: ZeticMLange.ZeticMLangeCacheHandlingPolicy = .REMOVE_OVERLAPPING, onDownload: ((Swift.Float) -> Swift.Void)? = nil) throws
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(personalKey: Swift.String, name: Swift.String, version: Swift.Int? = nil, target: ZeticMLange.Target, cacheHandlingPolicy: ZeticMLange.ZeticMLangeCacheHandlingPolicy = .REMOVE_OVERLAPPING, onDownload: ((Swift.Float) -> Swift.Void)? = nil) throws
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(personalKey: Swift.String, name: Swift.String, version: Swift.Int? = nil, target: ZeticMLange.Target, apType: ZeticMLange.APType = .NA, cacheHandlingPolicy: ZeticMLange.ZeticMLangeCacheHandlingPolicy = .REMOVE_OVERLAPPING, onDownload: ((Swift.Float) -> Swift.Void)? = nil) throws
+  #endif
+  public func run(inputs: [ZeticMLange.Tensor]) throws -> [ZeticMLange.Tensor]
+  public func getOutputDataArray() -> [Foundation.Data]
+  public func getOutputTensors() -> [ZeticMLange.Tensor]
+  @objc deinit
+}
+public struct ZeticMLangeModelMetadata {
+}
+public enum NetworkError : Swift.Error {
+  case invalidURL
+  case httpError(statusCode: Swift.Int, message: Swift.String?)
+  case noData
+  case decodingError
+  case downloadError(Swift.String)
+}
+@_hasMissingDesignatedInitializers final public class NetworkClient {
+  public init(timeout: Foundation.TimeInterval = 3600.0)
+  final public func fetchJson(url urlString: Swift.String, headers: [Swift.String : Swift.String] = [:]) async throws -> [Swift.String : Any]
+  final public func fetchText(url urlString: Swift.String, headers: [Swift.String : Swift.String] = [:]) async throws -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  final public func downloadFile(url urlString: Swift.String, destinationPath: Swift.String, headers: [Swift.String : Swift.String] = [:], onProgress: ((Swift.Float) -> Swift.Void)? = nil) async throws -> Swift.String
+  #endif
+  @objc deinit
+}
+public protocol DataType {
+  var size: Swift.Int { get }
+}
+public struct Unknown : ZeticMLange.DataType {
+  public let size: Swift.Int
+}
+public enum BuiltinDataType : Swift.String, ZeticMLange.DataType, Swift.CaseIterable {
+  case float32
+  case float64
+  case float16
+  case bfloat16
+  case uint8
+  case uint16
+  case uint32
+  case uint64
+  case int8
+  case int16
+  case int32
+  case int64
+  case boolean
+  case qint8
+  case qint16
+  case qint32
+  case qint4
+  public var size: Swift.Int {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias AllCases = [ZeticMLange.BuiltinDataType]
+  public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [ZeticMLange.BuiltinDataType] {
+    get
+  }
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public func dataType(from string: Swift.String) -> any ZeticMLange.DataType
+public class Tensor : Swift.Equatable {
+  public static func == (lhs: ZeticMLange.Tensor, rhs: ZeticMLange.Tensor) -> Swift.Bool
+  final public let data: Foundation.Data
+  final public let dataType: any ZeticMLange.DataType
+  final public let shape: [Swift.Int]
+  public init(data: Foundation.Data, dataType: any ZeticMLange.DataType, shape: [Swift.Int])
+  convenience public init(data: Foundation.Data)
+  public func count() -> Swift.Int
+  public func size() -> Swift.Int
+  @objc deinit
+}
+public protocol KeyStoreSource {
+  func save(modelKey: Swift.String, key: ZeticMLange.SecretKey32) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  func load(modelKey: Swift.String) -> ZeticMLange.SecretKey32?
+  #endif
+  func invalidate(modelKey: Swift.String)
+}
+public struct SecretKey32 : Swift.Equatable {
+  public let bytes: Foundation.Data
+  public static let size: Swift.Int
+  public init(bytes: Foundation.Data) throws
+  public static func fromHex(_ hex: Swift.String) throws -> ZeticMLange.SecretKey32
+  public static func == (a: ZeticMLange.SecretKey32, b: ZeticMLange.SecretKey32) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers public class ZtcSecurityClient {
+  public init()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getOrFetchSecretKey(mlangePersonalKey: Swift.String?, modelKey: Swift.String) async throws -> ZeticMLange.SecretKey32
+  #endif
+  public func resetLocal(modelKey: Swift.String)
+  @objc deinit
+}
+public struct ZtcChunkInfo {
+  public let chunkId: Swift.Int32
+  public let offset: Swift.UInt64
+  public let sizeBytes: Swift.UInt64
+  public let type: ZeticMLange.ZtcChunkType
+}
+public enum ZtcChunkType : Swift.UInt8 {
+  case rawFile
+  case dirArchive
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.UInt8)
+  #endif
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum ZtcStatus : Swift.Int32 {
+  case success
+  case errorFileOpen
+  case errorInvalidMagic
+  case errorInvalidVersion
+  case errorChunkNotFound
+  case errorIoFail
+  case errorDecryptionFail
+  case errorBufferTooSmall
+  case errorInvalidArgs
+  case errorMetadataParse
+  case errorKeyMissing
+  public var description: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int32)
+  #endif
+  public typealias RawValue = Swift.Int32
+  public var rawValue: Swift.Int32 {
+    get
+  }
+}
+public class ZtcError : Swift.Error {
+  final public let status: ZeticMLange.ZtcStatus
+  public init(_ status: ZeticMLange.ZtcStatus)
+  @objc deinit
+}
+public class ZtcLoader {
+  public init(path: Swift.String)
+  @objc deinit
+  public func setKey(key: Foundation.Data) throws
+  public func open() throws
+  public func getMetadataJson() -> Swift.String
+  public func saveChunk(chunkId: Swift.Int, outputPath: Swift.String) throws
+  public func getChunkInfo(chunkId: Swift.Int) throws -> ZeticMLange.ZtcChunkInfo
+}
+public struct ZtcManifestMetadata : Swift.Codable {
+  public let repoId: Swift.String?
+  public let modelKey: Swift.String?
+  public let artifacts: [ZeticMLange.ZtcManifestEntry]?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func findArtifact(for manufacturer: ZeticMLange.SocManufacturer = .current) -> ZeticMLange.ZtcManifestEntry?
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ZtcManifestEntry : Swift.Codable {
+  public let socManufacturer: ZeticMLange.SocManufacturer
+  public let path: Swift.String?
+  public let checksum: Swift.String?
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct ZtcGeneralModelMetadata : Swift.Codable {
+  public let version: Swift.String?
+  public let config: ZeticMLange.ZtcConfig?
+  public let huggingface: ZeticMLange.ZtcHuggingFace?
+  public let modules: [ZeticMLange.ZtcModule]
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct ZtcConfig : Swift.Codable {
+  public let batchSize: Swift.Int?
+  public let modelDtype: Swift.String?
+  public let numLayers: Swift.Int?
+  public let hiddenSize: Swift.Int?
+  public let numHeads: Swift.Int?
+  public let numKvHeads: Swift.Int?
+  public let numKvGroups: Swift.Int?
+  public let headDim: Swift.Int?
+  public let vocabSize: Swift.Int?
+  public let maxCacheLen: Swift.Int?
+  public let maxSeqLen: Swift.Int?
+  public let kvCacheLayout: Swift.String?
+  public let kvCacheDtype: Swift.String?
+  public let externalKvCache: Swift.Bool?
+  public let totalExports: Swift.Int?
+  public let ropeTheta: Swift.Float?
+  public let ropeScaling: Swift.Float?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ZtcHuggingFace : Swift.Codable {
+  public let repoId: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ZtcModule : Swift.Codable {
+  public let chunkId: Swift.Int?
+  public let moduleName: Swift.String?
+  public let modelName: Swift.String?
+  public let extensionName: Swift.String?
+  public let target: Swift.String?
+  public let spec: ZeticMLange.ZtcSpec?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ZtcSpec : Swift.Codable {
+  public let inputTensors: [ZeticMLange.ZtcTensor]?
+  public let outputTensors: [ZeticMLange.ZtcTensor]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ZtcTensor : Swift.Codable {
+  public let name: Swift.String?
+  public let originalName: Swift.String?
+  public let dtype: Swift.String?
+  public let rank: Swift.Int?
+  public let shape: [Swift.Int]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public class CoreMLFeatureProvider : CoreML.MLFeatureProvider {
+  @objc public var featureNames: Swift.Set<Swift.String>
+  public init(featureNames: [Swift.String], input: [Foundation.Data], description: CoreML.MLModelDescription)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func featureValue(for featureName: Swift.String) -> CoreML.MLFeatureValue?
+  #endif
+  @objc deinit
+}
+public class CoreMLTargetModel : ZeticMLange.TargetModel {
+  final public let numInputs: Swift.Int
+  final public let numOutputs: Swift.Int
+  final public let inputTensorOrder: [Swift.Int]
+  final public let outputTensorOrder: [Swift.Int]
+  final public let target: ZeticMLange.Target
+  final public let apType: ZeticMLange.APType
+  public init(_ module: ZeticMLange.ZtcModule, _ targetModelPath: Foundation.URL, _ targetModelIO: ZeticMLange.TargetModelIO, target: ZeticMLange.Target, apType: ZeticMLange.APType = .NA, isNpuAllowed: Swift.Bool = true) throws
+  public init(_ metadata: ZeticMLange.ZeticMLangeModelMetadata, _ targetModelPath: Foundation.URL, _ targetModelIO: ZeticMLange.TargetModelIO, target: ZeticMLange.Target, apType: ZeticMLange.APType = .NA, isNpuAllowed: Swift.Bool = true) throws
+  public func run(_ inputs: [Foundation.Data], _ outputs: inout [Foundation.Data]) throws
+  public func benchmark(_ inputs: [Foundation.Data], _ outputs: inout [Foundation.Data]) throws -> ZeticMLange.NativeInferenceResult
+  public func isInitialized() -> Swift.Bool
+  @objc deinit
+}
+extension ZeticMLange.ZeticMLangeCacheHandlingPolicy : Swift.Equatable {}
+extension ZeticMLange.ZeticMLangeCacheHandlingPolicy : Swift.Hashable {}
+extension ZeticMLange.APType : Swift.Equatable {}
+extension ZeticMLange.APType : Swift.Hashable {}
+extension ZeticMLange.APType : Swift.RawRepresentable {}
+extension ZeticMLange.ModelMode : Swift.Equatable {}
+extension ZeticMLange.ModelMode : Swift.Hashable {}
+extension ZeticMLange.ModelMode : Swift.RawRepresentable {}
+extension ZeticMLange.QuantType : Swift.Equatable {}
+extension ZeticMLange.QuantType : Swift.Hashable {}
+extension ZeticMLange.QuantType : Swift.RawRepresentable {}
+extension ZeticMLange.SocManufacturer : Swift.Equatable {}
+extension ZeticMLange.SocManufacturer : Swift.Hashable {}
+extension ZeticMLange.SocManufacturer : Swift.RawRepresentable {}
+extension ZeticMLange.LLMDataSetType : Swift.Equatable {}
+extension ZeticMLange.LLMDataSetType : Swift.Hashable {}
+extension ZeticMLange.LLMDataSetType : Swift.RawRepresentable {}
+extension ZeticMLange.LLMKVCacheCleanupPolicy : Swift.Equatable {}
+extension ZeticMLange.LLMKVCacheCleanupPolicy : Swift.Hashable {}
+extension ZeticMLange.LLMKVCacheCleanupPolicy : Swift.RawRepresentable {}
+extension ZeticMLange.LLMModelMode : Swift.Equatable {}
+extension ZeticMLange.LLMModelMode : Swift.Hashable {}
+extension ZeticMLange.LLMModelMode : Swift.RawRepresentable {}
+extension ZeticMLange.LLMQuantType : Swift.Equatable {}
+extension ZeticMLange.LLMQuantType : Swift.Hashable {}
+extension ZeticMLange.LLMQuantType : Swift.RawRepresentable {}
+extension ZeticMLange.LLMTarget : Swift.Equatable {}
+extension ZeticMLange.LLMTarget : Swift.Hashable {}
+extension ZeticMLange.LLMTarget : Swift.RawRepresentable {}
+extension ZeticMLange.Target : Swift.Equatable {}
+extension ZeticMLange.Target : Swift.Hashable {}
+extension ZeticMLange.Target : Swift.RawRepresentable {}
+extension ZeticMLange.BuiltinDataType : Swift.Equatable {}
+extension ZeticMLange.BuiltinDataType : Swift.Hashable {}
+extension ZeticMLange.BuiltinDataType : Swift.RawRepresentable {}
+extension ZeticMLange.ZtcChunkType : Swift.Equatable {}
+extension ZeticMLange.ZtcChunkType : Swift.Hashable {}
+extension ZeticMLange.ZtcChunkType : Swift.RawRepresentable {}
+extension ZeticMLange.ZtcStatus : Swift.Equatable {}
+extension ZeticMLange.ZtcStatus : Swift.Hashable {}
+extension ZeticMLange.ZtcStatus : Swift.RawRepresentable {}

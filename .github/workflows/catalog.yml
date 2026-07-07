@@ -1,0 +1,52 @@
+name: Catalog
+
+# Keeps the README catalog in sync with every app's meta.json, and blocks
+# accidental Korean characters or committed API keys from landing.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Catalog is in sync with meta.json
+        run: python3 scripts/generate_catalog.py --check
+
+      - name: Authored content is English-only (no Korean)
+        run: |
+          # The authored/marketing surface (docs, READMEs, comments, config) is
+          # English-only. Functional i18n data inside app implementations — a
+          # language's own endonym in a language picker, language-specific demo
+          # strings in the translator/transcriber — is allowed, so app source
+          # trees are excluded below.
+          MATCHES=$(git ls-files -z -- . \
+              ':(exclude)apps/*/Android/**' \
+              ':(exclude)apps/*/iOS/**' \
+              ':(exclude)apps/*/Flutter/**' \
+              ':(exclude)apps/*/prepare/**' \
+            | xargs -0 grep -lIP '[\x{AC00}-\x{D7A3}\x{1100}-\x{11FF}\x{3130}-\x{318F}]' || true)
+          if [ -n "$MATCHES" ]; then
+            echo "::error::Korean found in authored content (English-only):"
+            echo "$MATCHES"
+            exit 1
+          fi
+          echo "OK — authored content is English-only."
+
+      - name: No leaked API keys
+        run: |
+          if git grep -nIE '(tokenKey|personalKey|MLANGE_PERSONAL_ACCESS_TOKEN)[^=:]*[=:][[:space:]]*"[A-Za-z0-9_-]{16,}"' \
+              -- 'apps/**' \
+              | grep -viE 'YOUR_PERSONAL_ACCESS_TOKEN|YOUR_MLANGE_KEY|YOUR_KEY|PLACEHOLDER'; then
+            echo "::error::A value that looks like a real Melange key was found. Use placeholders."
+            exit 1
+          fi
+          echo "OK — no leaked keys."

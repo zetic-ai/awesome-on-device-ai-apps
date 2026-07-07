@@ -1,0 +1,9 @@
+# Code owners are requested for review automatically on matching paths.
+# TODO(team): replace @zetic-ai/maintainers with a real GitHub team or usernames.
+
+# Default owner for everything
+*                       @zetic-ai/maintainers
+
+# Catalog tooling — changes here affect every app listing
+/scripts/               @zetic-ai/maintainers
+/README.md              @zetic-ai/maintainers

@@ -1,0 +1,13 @@
+{
+  "name": "Emotion Recognition",
+  "slug": "FaceEmotionRecognition",
+  "category": "Vision",
+  "tagline": "Real-time facial emotion from the camera",
+  "model": "Emo-AffectNet",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "demo": null,
+  "melange": "https://mlange.zetic.ai/p/ElenaRyumina/FaceEmotionRecognition"
+}

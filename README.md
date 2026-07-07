@@ -2,11 +2,11 @@
 
 # 🧠 Awesome On-Device AI Apps
 
-### AI in your pocket. 36 real apps that run 100% on your phone.
+### Ship the AI features the cloud legally can't. 36 apps that run 100% on the phone.
 
 <img src="res/screenshots/qwen_4b_ios.gif" width="178" alt="On-device chat"> <img src="res/screenshots/translator-ocr.gif" width="178" alt="Offline translator"> <img src="res/screenshots/ainotes.gif" width="178" alt="Private AI notes"> <img src="res/screenshots/camera-vitals.gif" width="178" alt="Camera heart-rate">
 
-**No cloud&nbsp; ·&nbsp; No latency&nbsp; ·&nbsp; No API bills&nbsp; ·&nbsp; Runs offline**
+**No compliance wall&nbsp; ·&nbsp; $0 at any scale&nbsp; ·&nbsp; Data never leaves the device&nbsp; ·&nbsp; Works offline**
 
 <sub>💬 Chat&nbsp; · &nbsp;🌐 Translate&nbsp; · &nbsp;👁️ Vision&nbsp; · &nbsp;❤️ Health&nbsp; · &nbsp;🎙️ Voice&nbsp; · &nbsp;📈 Forecasting</sub>
 
@@ -27,9 +27,9 @@
 
 <br/>
 
-> ### Ship AI features your competitors can't, in products they legally can't put AI in.
+> ### On-device is a business decision, not just a technical one.
 
-Every app here runs the model on the phone itself. Nothing goes to a server. That one fact rewrites the business case:
+Every app here runs the model on the phone itself. Nothing goes to a server. That one fact rewrites the economics:
 
 - 🛡️ **No compliance wall.** No user data in the cloud means no GDPR, HIPAA, or data-residency blocker between you and launch. Put AI into health, finance, and enterprise products, and actually charge for it.
 - 💸 **$0 marginal cost.** No per-token bill, no inference servers. Your margins hold as you scale from 1 to 10 million users.

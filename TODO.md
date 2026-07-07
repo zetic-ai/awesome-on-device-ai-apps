@@ -34,8 +34,10 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
       Pick one and document it.
 - [ ] **CODEOWNERS.** `.github/CODEOWNERS` references `@zetic-ai/maintainers`, so create that
       GitHub team (or swap in real usernames).
-- [ ] **Repo social preview image** (Settings → General → Social preview), 1280×640. This is
-      the image that shows when the repo is shared, a big deal for a launch.
+- [ ] **Upload the social preview image.** The asset is ready at
+      `docs/assets/social-preview.png` (1280x640; regenerate with
+      `python3 docs/assets/make_social_preview.py`). It just needs uploading at
+      Settings -> General -> Social preview (a repo setting, not a commit).
 - [ ] **Hero/banner + logo asset** in `docs/assets/` if we want a branded header.
 - [ ] **`extension/` submodule.** The old repo had a `zetic_mlange_ext` submodule; it was
       *not* migrated. Decide if any app needs it and wire it up, or confirm none do.

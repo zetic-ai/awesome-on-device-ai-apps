@@ -8,12 +8,12 @@ Not "does it demo a model." Not "does it compile." *Would someone use it.* If ye
 
 ## Add an app in 4 steps
 
-1. **Create the folder** — `apps/<YourApp>/` with a real, runnable project:
-   - `Android/` — a full Android Studio project (Kotlin), and/or
-   - `iOS/` — a full Xcode project (Swift)
+1. **Create the folder** `apps/<YourApp>/` with a real, runnable project:
+   - `Android/`, a full Android Studio project (Kotlin), and/or
+   - `iOS/`, a full Xcode project (Swift)
    - At least one platform must actually run on a device.
 
-2. **Add `meta.json`** — copy one from an existing app and edit it. This is the single source of truth for the catalog:
+2. **Add `meta.json`** by copying one from an existing app and editing it. This is the single source of truth for the catalog:
    ```json
    {
      "name": "Your App",
@@ -27,7 +27,7 @@ Not "does it demo a model." Not "does it compile." *Would someone use it.* If ye
    }
    ```
 
-3. **Write `apps/<YourApp>/README.md`** — what it does, quick start, and a demo GIF. Put shared demo media in `res/screenshots/`.
+3. **Write `apps/<YourApp>/README.md`** covering what it does, quick start, and a demo GIF. Put shared demo media in `res/screenshots/`.
 
 4. **Regenerate the catalog and open a PR:**
    ```bash
@@ -40,7 +40,7 @@ Not "does it demo a model." Not "does it compile." *Would someone use it.* If ye
 - **It runs on a real device.** Simulators don't have the NPU. Prove it with a demo GIF in the PR.
 - **No secrets.** Never commit a real Melange key. Keys stay as placeholders (`YOUR_PERSONAL_ACCESS_TOKEN`); use `./scripts/adapt_mlange_key.sh` locally and `./scripts/setup_git_ignore_keys.sh` to keep them out of git. See [SECURITY.md](SECURITY.md).
 - **Consistent layout.** Match the folder shape of existing apps.
-- **English only** in authored content — docs, code comments, UI chrome, and commit messages. (Functional i18n data is fine: a language's own endonym in a language picker, or language-specific demo strings in a translator/transcriber that actually supports that language.)
+- **English only** in authored content: docs, code comments, UI chrome, and commit messages. (Functional i18n data is fine: a language's own endonym in a language picker, or language-specific demo strings in a translator/transcriber that actually supports that language.)
 - **Model license.** Make sure the underlying model permits redistribution/use, and note it in the app README.
 
 ## Getting a Melange key

@@ -17,7 +17,7 @@ If you accidentally commit a key: revoke it immediately in the [Melange dashboar
 
 ## Privacy model
 
-Every app in this repo runs inference **on-device**. Camera frames, microphone audio, and text are processed locally and are not designed to leave the phone. If you contribute an app, keep that promise — any network call must be clearly documented in the app README.
+Every app in this repo runs inference **on-device**. Camera frames, microphone audio, and text are processed locally and are not designed to leave the phone. If you contribute an app, keep that promise: any network call must be clearly documented in the app README.
 
 ## Reporting a vulnerability
 

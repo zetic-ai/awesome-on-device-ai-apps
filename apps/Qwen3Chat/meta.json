@@ -2,7 +2,7 @@
   "name": "Qwen3 Chat",
   "slug": "Qwen3Chat",
   "category": "Language & Text",
-  "tagline": "A private ChatGPT in your pocket — full LLM chat with real-time token streaming",
+  "tagline": "A private ChatGPT in your pocket, with real-time token streaming",
   "model": "Qwen3-4B",
   "platforms": [
     "Android",

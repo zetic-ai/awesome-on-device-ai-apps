@@ -2,7 +2,7 @@
   "name": "Offline Translator",
   "slug": "translate-tencent_HY-MT",
   "category": "Language & Text",
-  "tagline": "Translate by text, voice, or camera/OCR — real-time, instant language swap, zero signal needed",
+  "tagline": "Translate by text, voice, or camera/OCR, with real-time streaming and instant language swap",
   "model": "Tencent HY-MT",
   "platforms": [
     "Android",

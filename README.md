@@ -2,7 +2,7 @@
 
 # 🧠 Awesome On-Device AI Apps
 
-### AI in your pocket — 18+ real apps that run 100% on your phone
+### AI in your pocket. 18+ real apps that run 100% on your phone.
 
 <img src="res/screenshots/qwen_4b_ios.gif" width="178" alt="On-device chat"> <img src="res/screenshots/translator-ocr.gif" width="178" alt="Offline translator"> <img src="res/screenshots/ainotes.gif" width="178" alt="Private AI notes"> <img src="res/screenshots/camera-vitals.gif" width="178" alt="Camera heart-rate">
 
@@ -21,19 +21,21 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](CONTRIBUTING.md)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da.svg?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/gqhDWfZbgU)
 
+<sub>⚡ Powered by <a href="https://mlange.zetic.ai"><b>Melange</b></a>, the on-device NPU runtime</sub>
+
 </div>
 
 <br/>
 
 > ### Not a link farm. Not a paper list. Not "SDK examples."
-> **Every folder here is a finished app that runs on a real device — today.**
+> **Every folder here is a finished app that runs on a real device, today.**
 
-- 📱 **Real apps, not links** — native Android & iOS you clone and run, not a bibliography.
-- 🔒 **Actually on-device** — the model runs on the phone's NPU. Nothing leaves the device.
-- 💸 **$0 to run, forever** — no per-token API bill, no server, no rate limit.
-- ✈️ **Offline by default** — works in airplane mode, on the subway, off the grid.
+- 📱 **Real apps, not links.** Native Android & iOS you clone and run, not a bibliography.
+- 🔒 **Actually on-device.** The model runs on the phone's NPU. Nothing leaves the device.
+- 💸 **$0 to run, forever.** No per-token API bill, no server, no rate limit.
+- ✈️ **Offline by default.** Works in airplane mode, on the subway, off the grid.
 
-*Think `awesome-llm-apps`, but it runs in your pocket — offline, on the NPU, for $0.*
+*Think `awesome-llm-apps`, but it runs in your pocket: offline, on the NPU, for $0.*
 
 <br/>
 
@@ -44,7 +46,7 @@
 git clone https://github.com/zetic-ai/awesome-on-device-ai-apps.git
 cd awesome-on-device-ai-apps
 
-# 2. Get a free key (30s, no credit card) — the NPU engine streams model weights on first launch
+# 2. Get a free key (30s, no credit card). The NPU engine streams model weights on first launch
 #    https://mlange.zetic.ai  →  Settings  →  Personal Access Token
 ./scripts/adapt_mlange_key.sh
 
@@ -71,11 +73,11 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
-| [**Brew — AI Notes**](apps/Brew-AI-Notes) | Records, transcribes & summarizes meetings, then lets you ask anything. Granola, but fully private. | `Gemma-4-E2B` | `iOS` | [Model ↗](https://mlange.zetic.ai/p/changgeun/gemma-4-E2B-it) |
+| [**Brew AI Notes**](apps/Brew-AI-Notes) | Records, transcribes & summarizes meetings, then lets you ask anything. Granola, but fully private. | `Gemma-4-E2B` | `iOS` | [Model ↗](https://mlange.zetic.ai/p/changgeun/gemma-4-E2B-it) |
 | [**Grammar Fixer**](apps/t5_base_grammar_correction) | Real-time grammar correction as you type | `T5-base` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Team_ZETIC/t5-base-grammar-correction) |
 | [**HY-MT Translator**](apps/tencent_HY-MT) | Streaming offline machine translation with instant language swap | `Tencent HY-MT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT) |
-| [**Offline Translator**](apps/translate-tencent_HY-MT) | Translate by text, voice, or camera/OCR — real-time, instant language swap, zero signal needed | `Tencent HY-MT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT) |
-| [**Qwen3 Chat**](apps/Qwen3Chat) | A private ChatGPT in your pocket — full LLM chat with real-time token streaming | `Qwen3-4B` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Qwen/Qwen3-4B) |
+| [**Offline Translator**](apps/translate-tencent_HY-MT) | Translate by text, voice, or camera/OCR, with real-time streaming and instant language swap | `Tencent HY-MT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT) |
+| [**Qwen3 Chat**](apps/Qwen3Chat) | A private ChatGPT in your pocket, with real-time token streaming | `Qwen3-4B` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Qwen/Qwen3-4B) |
 | [**Text Anonymizer**](apps/TextAnonymizer) | Auto-detects & masks PII (names, emails, phones) before any data moves | `tanaos-anonymizer-v1` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Steve/text-anonymizer-v1) |
 | [**Whisper ASR**](apps/whisper-tiny) | High-accuracy speech-to-text, fully offline | `Whisper Tiny` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/OpenAI/whisper-tiny-decoder) |
 
@@ -97,7 +99,7 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
-| [**Camera Vitals**](apps/Camera-Vitals) | Contactless heart-rate from the front camera — frames never leave the phone | `EfficientPhys-rPPG` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/EfficientPhys-rPPG_camera_vitals) |
+| [**Camera Vitals**](apps/Camera-Vitals) | Contactless heart-rate from the front camera; frames never leave the phone | `EfficientPhys-rPPG` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/EfficientPhys-rPPG_camera_vitals) |
 | [**Skin Classifier**](apps/Skin-Image-Classification) | On-device skin-lesion classification with severity-aware guidance (non-diagnostic) | `Skin-Cancer ViT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Skin_Cancer-Image_Classification) |
 | [**Voice Biomarker**](apps/Voice-Biomarker) | Speech-emotion + respiratory event detection (cough, wheeze) from mic audio | `wav2vec2 · YAMNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) |
 | [**Wellbeing Screener**](apps/multimodal-screener) | Fuses live face- and voice-emotion into an explainable mood check-in | `wav2vec2 · Emo-AffectNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) |
@@ -126,7 +128,7 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 
 Like what you see? Dropping on-device inference into your own project is ~3 lines.
 
-**Android** — `build.gradle.kts`:
+**Android**, in `build.gradle.kts`:
 ```kotlin
 dependencies { implementation("com.zeticai.mlange:mlange:+") }
 ```
@@ -135,13 +137,13 @@ val model = ZeticMLangeModel(context = this, tokenKey = "YOUR_KEY", modelName = 
 val outputs = model.run(inputs)   // NPU-accelerated, on-device
 ```
 
-**iOS** — Swift Package Manager → `https://github.com/zetic-ai/ZeticMLangeiOS.git`:
+**iOS**, via Swift Package Manager → `https://github.com/zetic-ai/ZeticMLangeiOS.git`:
 ```swift
 let model = try ZeticMLangeModel(tokenKey: "YOUR_KEY", name: "Team_ZETIC/YOLO26", version: 1)
 let outputs = try model.run(inputs: inputs)
 ```
 
-Want your *own* model on-device? Upload it to [Melange](https://mlange.zetic.ai) — it converts & NPU-optimizes automatically and hands you back code.
+Want your *own* model on-device? Upload it to [Melange](https://mlange.zetic.ai) and it converts & NPU-optimizes automatically, then hands you back code.
 
 <br/>
 
@@ -170,7 +172,7 @@ Built by [ZETIC](https://zetic.ai) · Powered by [Melange](https://mlange.zetic.
 
 [![Contributors](https://contrib.rocks/image?repo=zetic-ai/awesome-on-device-ai-apps)](https://github.com/zetic-ai/awesome-on-device-ai-apps/graphs/contributors)
 
-**If a phone-native AI app made you go _"wait, that runs offline?"_ — ⭐ star it. It's how the next dev finds it.**
+**If a phone-native AI app made you go _"wait, that runs offline?"_, then ⭐ star it. It's how the next dev finds it.**
 
 </div>
 
@@ -178,10 +180,10 @@ Built by [ZETIC](https://zetic.ai) · Powered by [Melange](https://mlange.zetic.
 
 ## 📄 License
 
-App source is **Apache 2.0** — use it commercially or privately, however you like. The Melange SDK itself is a proprietary library under the ZETIC [Terms of Service](https://zetic.ai/terms).
+App source is **Apache 2.0**: use it commercially or privately, however you like. The Melange SDK itself is a proprietary library under the ZETIC [Terms of Service](https://zetic.ai/terms).
 
 <!-- ───────────────────────────────────────────────────────────────────────────
-     MAINTAINER TODO — things Claude can't do; teammates please fill in.
+     MAINTAINER TODO: things that need a human; teammates please fill in.
      Kept as an HTML comment so it doesn't render on GitHub. See TODO.md for the
      tracked, checkbox version.
      ─────────────────────────────────────────────────────────────────────────── -->

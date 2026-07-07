@@ -6,11 +6,11 @@
 
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
-| [**Brew — AI Notes**](Brew-AI-Notes) | Records, transcribes & summarizes meetings, then lets you ask anything. Granola, but fully private. | `Gemma-4-E2B` | `iOS` | [Model ↗](https://mlange.zetic.ai/p/changgeun/gemma-4-E2B-it) |
+| [**Brew AI Notes**](Brew-AI-Notes) | Records, transcribes & summarizes meetings, then lets you ask anything. Granola, but fully private. | `Gemma-4-E2B` | `iOS` | [Model ↗](https://mlange.zetic.ai/p/changgeun/gemma-4-E2B-it) |
 | [**Grammar Fixer**](t5_base_grammar_correction) | Real-time grammar correction as you type | `T5-base` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Team_ZETIC/t5-base-grammar-correction) |
 | [**HY-MT Translator**](tencent_HY-MT) | Streaming offline machine translation with instant language swap | `Tencent HY-MT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT) |
-| [**Offline Translator**](translate-tencent_HY-MT) | Translate by text, voice, or camera/OCR — real-time, instant language swap, zero signal needed | `Tencent HY-MT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT) |
-| [**Qwen3 Chat**](Qwen3Chat) | A private ChatGPT in your pocket — full LLM chat with real-time token streaming | `Qwen3-4B` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Qwen/Qwen3-4B) |
+| [**Offline Translator**](translate-tencent_HY-MT) | Translate by text, voice, or camera/OCR, with real-time streaming and instant language swap | `Tencent HY-MT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/vaibhav-zetic/tencent_HY-MT) |
+| [**Qwen3 Chat**](Qwen3Chat) | A private ChatGPT in your pocket, with real-time token streaming | `Qwen3-4B` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Qwen/Qwen3-4B) |
 | [**Text Anonymizer**](TextAnonymizer) | Auto-detects & masks PII (names, emails, phones) before any data moves | `tanaos-anonymizer-v1` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Steve/text-anonymizer-v1) |
 | [**Whisper ASR**](whisper-tiny) | High-accuracy speech-to-text, fully offline | `Whisper Tiny` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/OpenAI/whisper-tiny-decoder) |
 
@@ -28,7 +28,7 @@
 
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
-| [**Camera Vitals**](Camera-Vitals) | Contactless heart-rate from the front camera — frames never leave the phone | `EfficientPhys-rPPG` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/EfficientPhys-rPPG_camera_vitals) |
+| [**Camera Vitals**](Camera-Vitals) | Contactless heart-rate from the front camera; frames never leave the phone | `EfficientPhys-rPPG` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/EfficientPhys-rPPG_camera_vitals) |
 | [**Skin Classifier**](Skin-Image-Classification) | On-device skin-lesion classification with severity-aware guidance (non-diagnostic) | `Skin-Cancer ViT` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Skin_Cancer-Image_Classification) |
 | [**Voice Biomarker**](Voice-Biomarker) | Speech-emotion + respiratory event detection (cough, wheeze) from mic audio | `wav2vec2 · YAMNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) |
 | [**Wellbeing Screener**](multimodal-screener) | Fuses live face- and voice-emotion into an explainable mood check-in | `wav2vec2 · Emo-AffectNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) |

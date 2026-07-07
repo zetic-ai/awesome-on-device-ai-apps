@@ -2,7 +2,7 @@
   "name": "Camera Vitals",
   "slug": "Camera-Vitals",
   "category": "Health & Wellbeing",
-  "tagline": "Contactless heart-rate from the front camera — frames never leave the phone",
+  "tagline": "Contactless heart-rate from the front camera; frames never leave the phone",
   "model": "EfficientPhys-rPPG",
   "platforms": [
     "Android",

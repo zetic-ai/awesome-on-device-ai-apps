@@ -2,16 +2,28 @@
 
 **Detects caries and periapical lesions on a dental X-ray you upload, on-device (non-diagnostic).**
 
-- **Model:** `YOLO11n`
-- **Platforms:** Flutter
-- **Runs:** 100% on-device, powered by [Melange](https://mlange.zetic.ai)
+Runs entirely on the phone via `YOLO11n`, powered by [Melange](https://mlange.zetic.ai). No cloud, no data leaving the device.
 
-## Quick start
+## Why on-device
 
-1. Get a free Melange key at [mlange.zetic.ai](https://mlange.zetic.ai) (Settings then Personal Access Token).
+- 🔒 **Private.** Inference happens on the phone's NPU. Nothing is uploaded, so there is no cloud dataset to breach or audit.
+- 💸 **$0 to run.** No cloud inference, no per-call bill, at any scale.
+- ✈️ **Offline.** Works with no network, anywhere.
+
+## Run it
+
+1. Grab a free [Melange](https://mlange.zetic.ai) key (30 seconds, no card): Settings, then Personal Access Token.
 2. From the repo root, run `./scripts/adapt_mlange_key.sh`.
-3. Open `Flutter/` and `flutter run` on a real device.
+3. Open `Flutter/` and run `flutter run` on a connected device.
 
-Inference runs entirely on the phone's NPU. Nothing leaves the device.
+The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
-See the repo [contributing guide](../../CONTRIBUTING.md) for the app conventions.
+## Details
+
+| Model | Platforms | Runtime |
+| :-- | :-- | :-- |
+| [`YOLO11n`](https://mlange.zetic.ai/p/ajayshah/DentalXRayDetect) | Flutter | [Melange](https://mlange.zetic.ai) |
+
+---
+
+Part of [**Awesome On-Device AI Apps**](../../README.md), a collection of AI apps that run 100% on the phone. Want your own model on-device? [Melange](https://mlange.zetic.ai) converts it and hands you back a phone-ready build.

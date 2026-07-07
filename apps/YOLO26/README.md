@@ -1,57 +1,29 @@
 # YOLO26
 
-<div align="center">
+**Next-gen NMS-free object detection**
 
-**Next-Generation NMS-Free Object Detection**
+Runs entirely on the phone via `YOLO26`, powered by [Melange](https://mlange.zetic.ai). No cloud, no data leaving the device.
 
-[![Melange](https://img.shields.io/badge/Powered%20by-Melange-orange.svg)](https://mlange.zetic.ai)
-[![Android](https://img.shields.io/badge/Platform-Android-green.svg)](Android/)
-[![iOS](https://img.shields.io/badge/Platform-iOS-blue.svg)](iOS/)
+## Why on-device
 
-</div>
+- 🔒 **Private.** Inference happens on the phone's NPU. Nothing is uploaded, so there is no cloud dataset to breach or audit.
+- 💸 **$0 to run.** No cloud inference, no per-call bill, at any scale.
+- ✈️ **Offline.** Works with no network, anywhere.
 
-> [!TIP]
-> **View on Melange Dashboard**: [Team_ZETIC/YOLO26](https://mlange.zetic.ai/p/Team_ZETIC/YOLO26?tab=summary&version=3) - Contains generated source code & benchmark reports.
+## Run it
 
-## 🚀 Quick Start
+1. Grab a free [Melange](https://mlange.zetic.ai) key (30 seconds, no card): Settings, then Personal Access Token.
+2. From the repo root, run `./scripts/adapt_mlange_key.sh`.
+3. Open `Android/` in Android Studio and run on a real device. Open `iOS/` in Xcode and run on a real device.
 
-Get up and running in minutes:
+The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
-1. **Get your Melange API Key** (free): [Sign up here](https://mlange.zetic.ai)
-2. **Configure API Key**:
-   ```bash
-   # From repository root
-   ./adapt_mlange_key.sh
-   ```
-3. **Run the App**:
-   - **Android**: Open `Android/` in Android Studio
-   - **iOS**: Open `iOS/` in Xcode
+## Details
 
-## 📚 Resources
+| Model | Platforms | Runtime |
+| :-- | :-- | :-- |
+| [`YOLO26`](https://mlange.zetic.ai/p/Team_ZETIC/YOLO26) | Android, iOS | [Melange](https://mlange.zetic.ai) |
 
-- **Melange Dashboard**: [View Model & Reports](https://mlange.zetic.ai/p/Team_ZETIC/YOLOv26?from=use-cases)
-- **Use Cases**: [YOLO26 on Use Cases Page](https://mlange.zetic.ai/use-cases) → [Direct Link](https://mlange.zetic.ai/p/Team_ZETIC/YOLO26?from=use-cases)
-- **Benchmark Reports**: [Performance Metrics](https://mlange.zetic.ai/p/Team_ZETIC/YOLO26?tab=report&version=3)
-- **Documentation**: [Melange Docs](https://docs.zetic.ai)
+---
 
-## 📋 Model Details
-
-- **Model**: YOLOv26 Nano
-- **Task**: Object Detection
-- **Melange Project**: [Team_ZETIC/YOLO26](https://mlange.zetic.ai/p/Team_ZETIC/YOLO26?from=use-cases)
-- **Version**: 3
-- **Key Features**: 
-  - NMS-Free architecture
-  - Real-time performance on mobile devices
-  - NPU-optimized via Melange
-
-This application showcases the **YOLO26 Nano** model using **Melange**. YOLOv26 is a next-generation object detection model that eliminates the need for Non-Maximum Suppression (NMS), making it highly efficient for edge devices with NPU acceleration.
-
-## 📁 Directory Structure
-
-```
-YOLO26/
-├── prepare/      # Model & input preparation scripts
-├── Android/      # Android implementation with Melange SDK
-└── iOS/          # iOS implementation with Melange SDK
-```
+Part of [**Awesome On-Device AI Apps**](../../README.md), a collection of AI apps that run 100% on the phone. Want your own model on-device? [Melange](https://mlange.zetic.ai) converts it and hands you back a phone-ready build.

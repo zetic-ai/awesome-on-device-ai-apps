@@ -1,55 +1,29 @@
-# MediaPipe BlazeFace
+# Face Detection
 
-<div align="center">
+**Ultra-fast selfie-range face detection**
 
-**Ultra-Fast Face Detection for Mobile Devices**
+Runs entirely on the phone via `BlazeFace`, powered by [Melange](https://mlange.zetic.ai). No cloud, no data leaving the device.
 
-[![Melange](https://img.shields.io/badge/Powered%20by-Melange-orange.svg)](https://mlange.zetic.ai)
-[![Android](https://img.shields.io/badge/Platform-Android-green.svg)](Android/)
-[![iOS](https://img.shields.io/badge/Platform-iOS-blue.svg)](iOS/)
+## Why on-device
 
-</div>
+- 🔒 **Private.** Inference happens on the phone's NPU. Nothing is uploaded, so there is no cloud dataset to breach or audit.
+- 💸 **$0 to run.** No cloud inference, no per-call bill, at any scale.
+- ✈️ **Offline.** Works with no network, anywhere.
 
-> [!TIP]
-> **View on Melange Dashboard**: [google/MediaPipe-Face-Detection](https://mlange.zetic.ai/p/google/MediaPipe-Face-Detection) - Contains generated source code & benchmark reports.
+## Run it
 
-## 🚀 Quick Start
+1. Grab a free [Melange](https://mlange.zetic.ai) key (30 seconds, no card): Settings, then Personal Access Token.
+2. From the repo root, run `./scripts/adapt_mlange_key.sh`.
+3. Open `Android/` in Android Studio and run on a real device. Open `iOS/` in Xcode and run on a real device.
 
-Get up and running in minutes:
+The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
-1. **Get your Melange API Key** (free): [Sign up here](https://mlange.zetic.ai)
-2. **Configure API Key**:
-   ```bash
-   # From repository root
-   ./adapt_mlange_key.sh
-   ```
-3. **Run the App**:
-   - **Android**: Open `Android/` in Android Studio
-   - **iOS**: Open `iOS/` in Xcode
+## Details
 
-## 📚 Resources
+| Model | Platforms | Runtime |
+| :-- | :-- | :-- |
+| [`BlazeFace`](https://mlange.zetic.ai/p/google/MediaPipe-Face-Detection) | Android, iOS | [Melange](https://mlange.zetic.ai) |
 
-- **Melange Dashboard**: [View Model & Reports](https://mlange.zetic.ai/p/google/MediaPipe-Face-Detection?from=use-cases)
-- **Melange Model Library**: [Model Library](https://mlange.zetic.ai/model-library)
-- **Documentation**: [Melange Docs](https://docs.zetic.ai)
+---
 
-## 📋 Model Details
-
-- **Model**: Google MediaPipe BlazeFace (short-range)
-- **Task**: Face Detection
-- **Melange Project**: [google/MediaPipe-Face-Detection](https://mlange.zetic.ai/p/google/MediaPipe-Face-Detection)
-- **Key Features**:
-  - Ultra-fast face detection optimized for short-range selfie cameras
-  - Lightweight architecture for mobile devices
-  - NPU-accelerated via Melange
-
-This application showcases **Google MediaPipe BlazeFace** using **Melange**. BlazeFace is a lightweight and highly optimized face detection architecture specifically designed for mobile and edge devices, with NPU acceleration for ultra-fast performance.
-
-## 📁 Directory Structure
-
-```
-MediaPipe-Face-Detection/
-├── prepare/      # Model & input preparation scripts
-├── Android/      # Android implementation with Melange SDK
-└── iOS/          # iOS implementation with Melange SDK
-```
+Part of [**Awesome On-Device AI Apps**](../../README.md), a collection of AI apps that run 100% on the phone. Want your own model on-device? [Melange](https://mlange.zetic.ai) converts it and hands you back a phone-ready build.

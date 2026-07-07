@@ -1,55 +1,29 @@
-# YOLOv8 Nano
+# YOLOv8
 
-<div align="center">
+**Real-time object detection & tracking in milliseconds**
 
-**Real-Time Object Detection and Tracking**
+Runs entirely on the phone via `YOLOv8n`, powered by [Melange](https://mlange.zetic.ai). No cloud, no data leaving the device.
 
-[![Melange](https://img.shields.io/badge/Powered%20by-Melange-orange.svg)](https://mlange.zetic.ai)
-[![Android](https://img.shields.io/badge/Platform-Android-green.svg)](Android/)
-[![iOS](https://img.shields.io/badge/Platform-iOS-blue.svg)](iOS/)
+## Why on-device
 
-</div>
+- 🔒 **Private.** Inference happens on the phone's NPU. Nothing is uploaded, so there is no cloud dataset to breach or audit.
+- 💸 **$0 to run.** No cloud inference, no per-call bill, at any scale.
+- ✈️ **Offline.** Works with no network, anywhere.
 
-> [!TIP]
-> **View on Melange Dashboard**: [Ultralytics/YOLOv8n](https://mlange.zetic.ai/p/Ultralytics/YOLOv8n?from=use-cases) - Contains generated source code & benchmark reports.
+## Run it
 
-## 🚀 Quick Start
+1. Grab a free [Melange](https://mlange.zetic.ai) key (30 seconds, no card): Settings, then Personal Access Token.
+2. From the repo root, run `./scripts/adapt_mlange_key.sh`.
+3. Open `Android/` in Android Studio and run on a real device. Open `iOS/` in Xcode and run on a real device.
 
-Get up and running in minutes:
+The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
-1. **Get your Melange API Key** (free): [Sign up here](https://mlange.zetic.ai)
-2. **Configure API Key**:
-   ```bash
-   # From repository root
-   ./adapt_mlange_key.sh
-   ```
-3. **Run the App**:
-   - **Android**: Open `Android/` in Android Studio
-   - **iOS**: Open `iOS/` in Xcode
+## Details
 
-## 📚 Resources
+| Model | Platforms | Runtime |
+| :-- | :-- | :-- |
+| [`YOLOv8n`](https://mlange.zetic.ai/p/Ultralytics/YOLOv8n) | Android, iOS | [Melange](https://mlange.zetic.ai) |
 
-- **Melange Dashboard**: [View Model & Reports](https://mlange.zetic.ai/p/Ultralytics/YOLOv8n?from=use-cases)
-- **Melange Model Library**: [Model Library](https://mlange.zetic.ai/model-library) 
-- **Documentation**: [Melange Docs](https://docs.zetic.ai)
+---
 
-## 📋 Model Details
-
-- **Model**: Ultralytics YOLOv8 Nano
-- **Task**: Object Detection
-- **Melange Project**: [Ultralytics/YOLOv8n](https://mlange.zetic.ai/p/Ultralytics/YOLOv8n?from=use-cases)
-- **Key Features**:
-  - Real-time object detection in milliseconds
-  - Optimized for mobile and edge devices
-  - NPU-accelerated via Melange
-
-This application showcases the **YOLOv8 Nano** model using **Melange**. YOLOv8 Nano provides real-time object detection and tracking capabilities optimized for mobile devices with NPU acceleration.
-
-## 📁 Directory Structure
-
-```
-YOLOv8/
-├── prepare/      # Model & input preparation scripts
-├── Android/      # Android implementation with Melange SDK
-└── iOS/          # iOS implementation with Melange SDK
-```
+Part of [**Awesome On-Device AI Apps**](../../README.md), a collection of AI apps that run 100% on the phone. Want your own model on-device? [Melange](https://mlange.zetic.ai) converts it and hands you back a phone-ready build.

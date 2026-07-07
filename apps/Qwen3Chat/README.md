@@ -1,110 +1,31 @@
-# Qwen3-4B Chat App
+# Qwen3 Chat
 
-<div align="center">
+**A private ChatGPT in your pocket, with real-time token streaming**
 
-<div align="center">
+<p align="center"><img src="../../res/screenshots/qwen_4b_ios.gif" width="240" alt="Qwen3 Chat demo"></p>
 
-| **iOS** |
-|:---:|
-| <img src="../../res/screenshots/qwen_4b_ios.gif" width="200" alt="iOS Screenshot"> |
+Runs entirely on the phone via `Qwen3-4B`, powered by [Melange](https://mlange.zetic.ai). No cloud, no data leaving the device.
 
-</div>
+## Why on-device
 
+- 🔒 **Private.** Inference happens on the phone's NPU. Nothing is uploaded, so there is no cloud dataset to breach or audit.
+- 💸 **$0 to run.** No cloud inference, no per-call bill, at any scale.
+- ✈️ **Offline.** Works with no network, anywhere.
 
-**On-Device LLM Chatbot leveraging Qwen3-4B**
+## Run it
 
-[![Melange](https://img.shields.io/badge/Powered%20by-Melange-orange.svg)](https://mlange.zetic.ai)
-[![Android](https://img.shields.io/badge/Platform-Android-green.svg)](Android/)
-[![iOS](https://img.shields.io/badge/Platform-iOS-blue.svg)](iOS/)
+1. Grab a free [Melange](https://mlange.zetic.ai) key (30 seconds, no card): Settings, then Personal Access Token.
+2. From the repo root, run `./scripts/adapt_mlange_key.sh`.
+3. Open `Android/` in Android Studio and run on a real device. Open `iOS/` in Xcode and run on a real device.
 
-</div>
+The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
-> [!TIP]
-> **View on Melange Dashboard**: [Qwen/Qwen3-4B](https://mlange.zetic.ai/p/Qwen/Qwen3-4B)
+## Details
 
-## 🚀 Quick Start
+| Model | Platforms | Runtime |
+| :-- | :-- | :-- |
+| [`Qwen3-4B`](https://mlange.zetic.ai/p/Qwen/Qwen3-4B) | Android, iOS | [Melange](https://mlange.zetic.ai) |
 
-Get up and running in minutes:
+---
 
-1. **Get your Melange API Key** (free): [Sign up here](https://mlange.zetic.ai)
-2. **Configure API Key**:
-   ```bash
-   # From repository root
-   ./adapt_mlange_key.sh
-   ```
-3. **Run the App**:
-   - **Android**: Open `Android/` in Android Studio
-   - **iOS**: Open `iOS/` in Xcode
-
-## 📚 Resources
-
-- **Melange Dashboard**: [View Model & Reports](https://mlange.zetic.ai/p/Qwen/Qwen3-4B)
-- **Base Model**: [Qwen/Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B) on Hugging Face
-- **Documentation**: [Melange Docs](https://docs.zetic.ai)
-
-## 📋 Model Details
-
-- **Model**: Qwen3-4B
-- **Task**: Conversational LLM (Chat)
-- **Melange Project**: [Qwen/Qwen3-4B](https://mlange.zetic.ai/p/Qwen/Qwen3-4B)
-- **Base Model**: [Qwen/Qwen3-4B](https://huggingface.co/Qwen/Qwen3-4B) on Hugging Face
-- **Architecture**: Qwen (Decoder-only Transformer)
-- **Key Features**:
-  - Fully on-device inference via Melange
-  - Real-time token streaming
-  - Sliding context window for optimized memory management
-
-This application showcases the **Qwen3-4B** model using **Melange**. The app provides a fully functional native chat interface, running an advanced large language model completely on-device.
-
-## 📁 Directory Structure
-
-```
-Qwen3Chat/
-├── Android/       # Android implementation with Jetpack Compose & Melange SDK
-│   └── app/
-│       └── src/main/
-│           ├── java/com/zeticai/qwen3chat/
-│           │   ├── MainActivity.kt        # Main UI Entry Point
-│           │   ├── llm/LLMService.kt      # Zetic MLange Model Integration
-│           │   └── ui/                    # Jetpack Compose Screens
-│           └── AndroidManifest.xml
-└── iOS/          # iOS implementation with SwiftUI & Melange SDK
-    └── Qwen3Chat.xcodeproj/
-    └── Qwen3Chat/
-        ├── Qwen3Chat_iOSApp.swift         # App Entry Point
-        └── View/
-            ├── ChatView.swift             # Main Chat Interface
-            ├── LLMService.swift           # Zetic MLange Model Integration
-            └── ChatSessionManager.swift   # History & Prompt Builder
-```
-
-## 🔧 Technical Details
-
-### Model Architecture
-
-- **Base Model**: Qwen3-4B
-- **Input Format**: Raw Text Prompt
-- **Output Format**: Streaming Tokens
-- **Context Length Management**: Managed dynamic sliding window (`maxCharacters = 3000`)
-
-### Inference Process
-
-1. **Initialization**: The model is eagerly loaded in the background via `Task.detached` (iOS) or `viewModelScope.launch` (Android).
-2. **Download Handling**: App visualizes the model disk download progress state natively.
-3. **Prompt Building**: `ChatSessionManager` maintains a character-limited trailing context window for conversation history, appending `\nAssistant: ` to prime generation.
-4. **Token Streaming**: The UI loops `model.waitForNextToken()` to stream text back to the screen seamlessly.
-5. **Memory Management**: The framework ensures KV Cache is purged properly utilizing `model.cleanUp()` post-generation loops and on cancellation.
-
-### Key Implementation Details
-
-- **Responsive Token Streaming**: Tokens yield immediately to the Main Thread/Actor.
-- **Sliding History Window**: Drops the oldest messages to avoid KV-token overflow exceptions.
-- **Native Gestural UI**: Implements standard iOS (`scrollDismissesKeyboard`) and Android interactive bounds.
-
-## 💡 Features
-
-- ✅ **Real-time Streaming**: See the LLM response generated token-by-token.
-- ✅ **Dynamic Progress Indicator**: Feedback during the initial ~4GB model disk fetch.
-- ✅ **Contextual Conversation**: Application remembers and sends recent context in sequential turns.
-- ✅ **Hardware Accelerated**: Fully optimized via Melange for Mobile Neural Engines.
-- ✅ **Cross-Platform**: Modern Native UI available for both Android (Compose) and iOS (SwiftUI).
+Part of [**Awesome On-Device AI Apps**](../../README.md), a collection of AI apps that run 100% on the phone. Want your own model on-device? [Melange](https://mlange.zetic.ai) converts it and hands you back a phone-ready build.

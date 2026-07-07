@@ -133,6 +133,27 @@ def render_vibecoding():
     print("wrote", out)
 
 
+def render_business():
+    img, d = background()
+    hook = font(BOLD, 64)
+    d.text((M, 92), "Ship the AI features", font=hook, fill=WHITE)
+    d.text((M, 168), "the cloud legally can't.", font=hook, fill=WHITE)
+
+    d.rounded_rectangle([M, 292, M + 96, 298], radius=3, fill=ACCENT)  # beat
+
+    turn = "No compliance wall.  $0 at scale."
+    d.text((M, 326), turn, font=fit(d, turn, BOLD, 66, 40), fill=ACCENT2)
+    sub = "36 on-device apps for health, fintech, and enterprise."
+    d.text((M, 440), sub, font=fit(d, sub, REG, 33, 22), fill=MUTED)
+
+    draw_spaced(d, (M, 560), "AWESOME ON-DEVICE AI APPS", font(BOLD, 24), KICKER, 4)
+    melange_mark(d, 558, 30)
+    out = os.path.join(HERE, "social-preview-business.png")
+    img.save(out)
+    print("wrote", out)
+
+
 if __name__ == "__main__":
     render_default()
     render_vibecoding()
+    render_business()

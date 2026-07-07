@@ -52,7 +52,7 @@ Get up and running in minutes:
 
 - **Melange Dashboard**: [Emotion model](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) · [Respiratory model (YAMNet)](https://mlange.zetic.ai/p/google/Sound%20Classification(YAMNET))
 - **Documentation**: [Melange Docs](https://docs.zetic.ai)
-- **Platform deep-dives**: [iOS README](iOS/VoiceVitals/README.md) · [Android offline note](Android/OFFLINE_NOTE.md)
+- **Platform deep-dives**: [iOS README](iOS/VoiceVitals/README.md)
 
 ## 📋 Model Details
 
@@ -73,9 +73,9 @@ a one-line `AppConfig` change. This application showcases on-device audio infere
 
 ```
 Voice-Biomarker/
-├── Android/      # Jetpack Compose implementation with Melange SDK (see Android/OFFLINE_NOTE.md)
+├── Android/      # Jetpack Compose implementation with Melange SDK
 └── iOS/          # SwiftUI implementation with Melange SDK (see iOS/VoiceVitals/README.md)
 ```
 
 For platform-specific architecture and offline-behavior notes, see the
-[**iOS README**](iOS/VoiceVitals/README.md) and the [**Android offline note**](Android/OFFLINE_NOTE.md).
+[**iOS README**](iOS/VoiceVitals/README.md).

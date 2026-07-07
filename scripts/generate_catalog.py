@@ -35,11 +35,9 @@ def load_apps():
             meta = json.load(f)
         slug = meta.get("slug") or os.path.basename(os.path.dirname(path))
         meta["slug"] = slug
-        # auto-detect platforms if not declared
         if not meta.get("platforms"):
             appdir = os.path.dirname(path)
-            plats = [p for p in ("Android", "iOS", "Flutter") if os.path.isdir(os.path.join(appdir, p))]
-            meta["platforms"] = plats
+            meta["platforms"] = [p for p in ("Android", "iOS", "Flutter") if os.path.isdir(os.path.join(appdir, p))]
         apps.append(meta)
     return apps
 
@@ -55,38 +53,50 @@ def grouped(apps):
 
 
 def emoji_for(cat):
-    for c, e in CATEGORY_ORDER:
-        if c == cat:
-            return e
-    return "📦"
+    return dict(CATEGORY_ORDER).get(cat, "📦")
+
+
+def cat_id(cat):
+    """Stable, ASCII-only HTML anchor id — never depends on GitHub's emoji slugging."""
+    return "cat-" + re.sub(r"[^a-z0-9]+", "-", cat.lower()).strip("-")
 
 
 def platform_badges(plats):
-    icons = {"Android": "Android", "iOS": "iOS", "Flutter": "Flutter"}
-    return " ".join(f"`{icons.get(p, p)}`" for p in plats) or "—"
+    return " ".join(f"`{p}`" for p in plats) or "—"
 
 
-def render_catalog(apps):
+def render_catalog(apps, link_prefix="apps/", anchors=True):
+    groups = grouped(apps)
     lines = []
-    for cat, items in grouped(apps):
+    if anchors:
+        nav = " · ".join(f"{emoji_for(c)} [{c}](#{cat_id(c)})" for c, _ in groups)
+        lines += [f"**Jump to:** {nav}", ""]
+    for cat, items in groups:
+        if anchors:
+            lines.append(f'<a id="{cat_id(cat)}"></a>')
+            lines.append("")
         lines.append(f"### {emoji_for(cat)} {cat}")
         lines.append("")
         lines.append("| App | What it does | Model | Platforms | Try it |")
         lines.append("| :-- | :-- | :-- | :-- | :-- |")
         for a in items:
-            name = f"[**{a['name']}**](apps/{a['slug']})"
+            name = f"[**{a['name']}**]({link_prefix}{a['slug']})"
             try_ = f"[Model ↗]({a['melange']})" if a.get("melange") else "—"
-            lines.append(
-                f"| {name} | {a['tagline']} | `{a['model']}` | {platform_badges(a['platforms'])} | {try_} |"
-            )
+            lines.append(f"| {name} | {a['tagline']} | `{a['model']}` | {platform_badges(a['platforms'])} | {try_} |")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
 
 def render_apps_index(apps):
-    out = ["# App Index", "", f"{len(apps)} on-device AI apps. Every one runs 100% on the phone.", ""]
-    out.append(render_catalog(apps))
-    out.append("> Generated from each app's `meta.json` by `scripts/generate_catalog.py`. Do not edit by hand.")
+    out = [
+        "# App Index",
+        "",
+        f"{len(apps)} on-device AI apps. Every one runs 100% on the phone.",
+        "",
+        # links are relative to apps/, so no "apps/" prefix; no HTML anchors needed here
+        render_catalog(apps, link_prefix="", anchors=False),
+        "> Generated from each app's `meta.json` by `scripts/generate_catalog.py`. Do not edit by hand.",
+    ]
     return "\n".join(out) + "\n"
 
 
@@ -101,12 +111,11 @@ def splice(text, catalog):
 def main():
     check = "--check" in sys.argv
     apps = load_apps()
-    catalog = render_catalog(apps)
 
     readme_path = os.path.join(ROOT, "README.md")
     with open(readme_path) as f:
         readme = f.read()
-    new_readme = splice(readme, catalog)
+    new_readme = splice(readme, render_catalog(apps, link_prefix="apps/", anchors=True))
 
     index_path = os.path.join(ROOT, "apps", "README.md")
     new_index = render_apps_index(apps)

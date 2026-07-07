@@ -2,23 +2,24 @@
 
 # 🧠 Awesome On-Device AI Apps
 
-**18+ real AI apps that run 100% on your phone — clone, build, ship.**
+### AI in your pocket — 18+ real apps that run 100% on your phone
 
-Chat · Translate · Vision · Health · Voice · Forecasting
+<img src="res/screenshots/qwen_4b_ios.gif" width="178" alt="On-device chat"> <img src="res/screenshots/translator-ocr.gif" width="178" alt="Offline translator"> <img src="res/screenshots/ainotes.gif" width="178" alt="Private AI notes"> <img src="res/screenshots/camera-vitals.gif" width="178" alt="Camera heart-rate">
 
-**No cloud · No latency · No API bills · Runs offline**
+**No cloud&nbsp; ·&nbsp; No latency&nbsp; ·&nbsp; No API bills&nbsp; ·&nbsp; Runs offline**
+
+<sub>💬 Chat&nbsp; · &nbsp;🌐 Translate&nbsp; · &nbsp;👁️ Vision&nbsp; · &nbsp;❤️ Health&nbsp; · &nbsp;🎙️ Voice&nbsp; · &nbsp;📈 Forecasting</sub>
 
 <br/>
 
-[![Stars](https://img.shields.io/github/stars/zetic-ai/awesome-on-device-ai-apps?style=for-the-badge&color=8A2BE2)](https://github.com/zetic-ai/awesome-on-device-ai-apps/stargazers)
+[![Stars](https://img.shields.io/github/stars/zetic-ai/awesome-on-device-ai-apps?style=for-the-badge&color=8A2BE2&logo=github)](https://github.com/zetic-ai/awesome-on-device-ai-apps/stargazers)
 [![Forks](https://img.shields.io/github/forks/zetic-ai/awesome-on-device-ai-apps?style=for-the-badge)](https://github.com/zetic-ai/awesome-on-device-ai-apps/network/members)
-[![Contributors](https://img.shields.io/github/contributors/zetic-ai/awesome-on-device-ai-apps?style=for-the-badge)](https://github.com/zetic-ai/awesome-on-device-ai-apps/graphs/contributors)
 [![Last commit](https://img.shields.io/github/last-commit/zetic-ai/awesome-on-device-ai-apps?style=for-the-badge)](https://github.com/zetic-ai/awesome-on-device-ai-apps/commits)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=for-the-badge)](LICENSE)
 
-[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-lightgrey.svg)](.)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg)](CONTRIBUTING.md)
-[![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da.svg)](https://discord.gg/gqhDWfZbgU)
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-3DDC84.svg?style=flat-square)](.)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](CONTRIBUTING.md)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Us-7289da.svg?style=flat-square&logo=discord&logoColor=white)](https://discord.gg/gqhDWfZbgU)
 
 </div>
 
@@ -33,18 +34,6 @@ Chat · Translate · Vision · Health · Voice · Forecasting
 - ✈️ **Offline by default** — works in airplane mode, on the subway, off the grid.
 
 *Think `awesome-llm-apps`, but it runs in your pocket — offline, on the NPU, for $0.*
-
-<br/>
-
-## 🔥 Featured
-
-<div align="center">
-
-| [**On-Device Chat**](apps/Qwen3Chat) | [**Offline Translator**](apps/translate-tencent_HY-MT) | [**Private AI Notes**](apps/Brew-AI-Notes) | [**Camera Heart-Rate**](apps/Camera-Vitals) |
-|:---:|:---:|:---:|:---:|
-| <img src="res/screenshots/qwen_4b_ios.gif" width="190" alt="On-device chat"> | <img src="res/screenshots/translator-ocr.gif" width="190" alt="Offline translator"> | <img src="res/screenshots/ainotes.gif" width="190" alt="Private AI notes"> | <img src="res/screenshots/camera-vitals.gif" width="190" alt="Camera heart-rate"> |
-
-</div>
 
 <br/>
 
@@ -68,28 +57,15 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 
 <br/>
 
-## 📖 Table of contents
-
-<details>
-<summary><b>Browse 18+ apps by category</b></summary>
-
-- [💬 Language & Text](#-language--text) — chat, translation, grammar, ASR, privacy
-- [👁️ Vision](#️-vision) — object detection, face mesh, emotion
-- [❤️ Health & Wellbeing](#️-health--wellbeing) — heart-rate, voice biomarkers, skin, mood
-- [🔊 Audio](#-audio) — sound event classification
-- [📈 Forecasting](#-forecasting) — probabilistic time-series
-- [🧩 Use it in your own app](#-use-it-in-your-own-app)
-- [🤝 Contribute an app](#-contribute-an-app)
-
-</details>
-
-<br/>
-
 ## 🗂️ The apps
 
 > Auto-generated from each app's `meta.json`. Run `python3 scripts/generate_catalog.py` after adding one.
 
 <!-- CATALOG:START -->
+
+**Jump to:** 💬 [Language & Text](#cat-language-text) · 👁️ [Vision](#cat-vision) · ❤️ [Health & Wellbeing](#cat-health-wellbeing) · 🔊 [Audio](#cat-audio) · 📈 [Forecasting](#cat-forecasting)
+
+<a id="cat-language-text"></a>
 
 ### 💬 Language & Text
 
@@ -103,6 +79,8 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 | [**Text Anonymizer**](apps/TextAnonymizer) | Auto-detects & masks PII (names, emails, phones) before any data moves | `tanaos-anonymizer-v1` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Steve/text-anonymizer-v1) |
 | [**Whisper ASR**](apps/whisper-tiny) | High-accuracy speech-to-text, fully offline | `Whisper Tiny` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/OpenAI/whisper-tiny-decoder) |
 
+<a id="cat-vision"></a>
+
 ### 👁️ Vision
 
 | App | What it does | Model | Platforms | Try it |
@@ -113,6 +91,8 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 | [**YOLO26**](apps/YOLO26) | Next-gen NMS-free object detection | `YOLO26` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Team_ZETIC/YOLO26) |
 | [**YOLOv8**](apps/YOLOv8) | Real-time object detection & tracking in milliseconds | `YOLOv8n` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/Ultralytics/YOLOv8n) |
 
+<a id="cat-health-wellbeing"></a>
+
 ### ❤️ Health & Wellbeing
 
 | App | What it does | Model | Platforms | Try it |
@@ -122,11 +102,15 @@ No model conversion, no C++, no hardware SDK spelunking. Pick a folder, hit Run.
 | [**Voice Biomarker**](apps/Voice-Biomarker) | Speech-emotion + respiratory event detection (cough, wheeze) from mic audio | `wav2vec2 · YAMNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) |
 | [**Wellbeing Screener**](apps/multimodal-screener) | Fuses live face- and voice-emotion into an explainable mood check-in | `wav2vec2 · Emo-AffectNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/realtonypark/Wav2Vec2-Base_Emotion-Recognition) |
 
+<a id="cat-audio"></a>
+
 ### 🔊 Audio
 
 | App | What it does | Model | Platforms | Try it |
 | :-- | :-- | :-- | :-- | :-- |
-| [**YamNet**](apps/YamNet) | Classifies environmental sounds & audio events | `YAMNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/google/Sound%20Classification(YAMNET)) |
+| [**YamNet**](apps/YamNet) | Classifies environmental sounds & audio events | `YAMNet` | `Android` `iOS` | [Model ↗](https://mlange.zetic.ai/p/google/Sound%20Classification%28YAMNET%29) |
+
+<a id="cat-forecasting"></a>
 
 ### 📈 Forecasting
 

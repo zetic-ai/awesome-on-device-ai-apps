@@ -41,6 +41,15 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
       *not* migrated. Decide if any app needs it and wire it up, or confirm none do.
 - [ ] **Verify `scripts/*.sh` still work from the new `scripts/` location** (they `find apps`
       relative to CWD — must be run from repo root, e.g. `./scripts/adapt_mlange_key.sh`).
+- [ ] **Repo weight — vendored SDK binaries.** GitHub warns on push: `Brew-AI-Notes` vendors
+      the full `ZeticMLange.xcframework` (**73 MB**, over the 50 MB soft limit), and several apps
+      commit `.framework`/`.dylib` binaries (esp. `FaceEmotionRecognition` UITests). `.git` is
+      ~79 MB already and will only grow. Pick a fix and apply it (needs a device to re-verify
+      builds afterward):
+  - Prefer pulling the SDK via SPM/Gradle instead of vendoring it (matches the README's
+    "Use it in your own app" instructions). Brew vendored it only to dodge a Simulator-slice
+    issue — confirm whether that's still needed.
+  - Or move large binaries to **Git LFS** (history rewrite — coordinate with the team first).
 
 ## 🟡 Content accuracy (please double-check my inferences)
 

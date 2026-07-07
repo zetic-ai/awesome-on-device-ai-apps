@@ -1,6 +1,6 @@
 # Maintainer TODO
 
-Things the rebrand still needs that **can't be done from code alone** — they need a
+Things the rebrand still needs that **can't be done from code alone** and they need a
 human with a device, real credentials, or a judgment call. Grab one, do it, check it off.
 
 > This is the team-facing punch list. The public story lives in `README.md`.
@@ -32,31 +32,31 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
       so a fresh clone can't run it. Either (a) commit a real, tracked filter script +
       `.gitattributes`, or (b) rely on `scripts/setup_git_ignore_keys.sh` + the CI key scan.
       Pick one and document it.
-- [ ] **CODEOWNERS.** `.github/CODEOWNERS` references `@zetic-ai/maintainers` — create that
+- [ ] **CODEOWNERS.** `.github/CODEOWNERS` references `@zetic-ai/maintainers`, so create that
       GitHub team (or swap in real usernames).
 - [ ] **Repo social preview image** (Settings → General → Social preview), 1280×640. This is
-      the image that shows when the repo is shared — big deal for a launch.
+      the image that shows when the repo is shared, a big deal for a launch.
 - [ ] **Hero/banner + logo asset** in `docs/assets/` if we want a branded header.
 - [ ] **`extension/` submodule.** The old repo had a `zetic_mlange_ext` submodule; it was
       *not* migrated. Decide if any app needs it and wire it up, or confirm none do.
 - [ ] **Verify `scripts/*.sh` still work from the new `scripts/` location** (they `find apps`
-      relative to CWD — must be run from repo root, e.g. `./scripts/adapt_mlange_key.sh`).
-- [ ] **Repo weight — vendored SDK binaries.** GitHub warns on push: `Brew-AI-Notes` vendors
+      relative to CWD, so must be run from repo root, e.g. `./scripts/adapt_mlange_key.sh`).
+- [ ] **Repo weight: vendored SDK binaries.** GitHub warns on push: `Brew-AI-Notes` vendors
       the full `ZeticMLange.xcframework` (**73 MB**, over the 50 MB soft limit), and several apps
       commit `.framework`/`.dylib` binaries (esp. `FaceEmotionRecognition` UITests). `.git` is
       ~79 MB already and will only grow. Pick a fix and apply it (needs a device to re-verify
       builds afterward):
   - Prefer pulling the SDK via SPM/Gradle instead of vendoring it (matches the README's
     "Use it in your own app" instructions). Brew vendored it only to dodge a Simulator-slice
-    issue — confirm whether that's still needed.
-  - Or move large binaries to **Git LFS** (history rewrite — coordinate with the team first).
+    issue; confirm whether that's still needed.
+  - Or move large binaries to **Git LFS** (history rewrite; coordinate with the team first).
 
 ## 🟡 Content accuracy (please double-check my inferences)
 
 - [ ] **Audit every `meta.json`.** Taglines, model names, categories, and platform lists were
       inferred from the old README + folder contents. Correct anything wrong. Especially:
-  - [ ] `Brew-AI-Notes` is marked **iOS-only** — confirm, or add Android.
-  - [ ] `tencent_HY-MT` vs `translate-tencent_HY-MT` — two translator apps. Keep both, merge,
+  - [ ] `Brew-AI-Notes` is marked **iOS-only**; confirm, or add Android.
+  - [ ] `tencent_HY-MT` vs `translate-tencent_HY-MT`: two translator apps. Keep both, merge,
         or differentiate their taglines so they don't look like dupes.
   - [ ] Confirm each app's `melange` URL points at the right model page.
 - [ ] **Per-app README pass.** Make sure each `apps/*/README.md` reflects the new brand
@@ -84,8 +84,9 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
 
 ## 🟢 Growth / launch
 
-- [ ] **Launch plan:** set up the Star History chart baseline, write the HN / Reddit / X posts,
-      line up the first wave of stars, submit to Trendshift.
+- [ ] **Launch:** execute the plan in [docs/LAUNCH.md](docs/LAUNCH.md) (Show HN + ready-to-use
+      copy, channel timeline, honesty guardrails, pre-launch checklist). Blockers to clear first:
+      revoke leaked keys, set the social preview image, device-test the apps you will feature.
 
 ---
 

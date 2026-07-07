@@ -143,9 +143,11 @@ cd awesome-on-device-ai-apps
 
 <br/>
 
-## 🧩 Build your own, with Melange
+## 🧩 Build your own, by vibe-coding it
 
-Every app above runs on-device thanks to [**Melange**](https://mlange.zetic.ai), the engine that turns an AI model into a phone-ready, NPU-optimized build. Point it at your own model and you get a shipped on-device app in about an hour, not months of hardware tuning.
+Claude Code, Codex, and Cursor will vibe-code you a web app in minutes. Ask them for an app that runs a model on the phone's NPU and they stall, because on-device deployment is not something they know how to do.
+
+That is the gap [**Melange**](https://mlange.zetic.ai) fills, and it is the easiest way in the world to put AI on-device today. **Every app in this repo was built the same way: generate the integration code with Melange, paste it in, done.** Copy a use case from here and the on-device feature drops straight into your app, the same vibe-coding loop you already use.
 
 Dropping it into an existing project is about 3 lines:
 
@@ -164,7 +166,7 @@ let model = try ZeticMLangeModel(tokenKey: "YOUR_KEY", name: "Team_ZETIC/YOLO26"
 let outputs = try model.run(inputs: inputs)
 ```
 
-Bring your own model: upload it to [Melange](https://mlange.zetic.ai), it converts and NPU-optimizes automatically, then hands you back the code.
+Bring your own model: upload it to [Melange](https://mlange.zetic.ai), it converts and NPU-optimizes automatically, then hands you back a phone-ready build in about an hour, not months of hardware tuning.
 
 <br/>
 

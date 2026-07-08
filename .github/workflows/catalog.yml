@@ -38,10 +38,17 @@ jobs:
 
       - name: No leaked API keys
         run: |
-          if git grep -nIE '(tokenKey|personalKey|MLANGE_PERSONAL_ACCESS_TOKEN)[^=:]*[=:][[:space:]]*"[A-Za-z0-9_-]{16,}"' \
-              -- 'apps/**' \
-              | grep -viE 'YOUR_PERSONAL_ACCESS_TOKEN|YOUR_MLANGE_KEY|YOUR_KEY|PLACEHOLDER'; then
-            echo "::error::A value that looks like a real Melange key was found. Use placeholders."
+          # Melange tokens look like dev_<hex> or ztp_<hex>. Catch them anywhere,
+          # in any file and any context (xcschemes, comments, configs), not just
+          # values assigned to a known key variable.
+          if git grep -nIE '(dev|ztp)_[a-f0-9]{20,}'; then
+            echo "::error::A Melange token literal was found above. Scrub it to a placeholder."
             exit 1
           fi
-          echo "OK — no leaked keys."
+          # Also catch a real-looking value assigned to a key variable.
+          if git grep -nIE '(tokenKey|personalKey|projectKey|MLANGE_PERSONAL_ACCESS_TOKEN)[^=:]*[=:][[:space:]]*"[A-Za-z0-9_-]{16,}"' \
+              | grep -viE 'YOUR_PERSONAL_ACCESS_TOKEN|YOUR_MLANGE_KEY|YOUR_KEY|PLACEHOLDER'; then
+            echo "::error::A value that looks like a real Melange key is assigned above. Use a placeholder."
+            exit 1
+          fi
+          echo "OK, no leaked keys."

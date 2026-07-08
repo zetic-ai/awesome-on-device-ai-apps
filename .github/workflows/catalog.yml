@@ -34,7 +34,7 @@ jobs:
             echo "$MATCHES"
             exit 1
           fi
-          echo "OK — authored content is English-only."
+          echo "OK, authored content is English-only."
 
       - name: No leaked API keys
         run: |

@@ -20,7 +20,7 @@ Usage:
 """
 import sys, wave, numpy as np, onnxruntime as ort
 
-ONNX = "/Users/ajayshah/Desktop/ZETIC/voxscribe-wt/apps/VoxScribe/diarization/pyannote_segmentation_static.onnx"
+ONNX = "apps/VoxScribe/diarization/pyannote_segmentation_static.onnx"
 SR = 16000
 WIN = 160000  # 10 s window (single-window floor: <=3 speakers, no clustering)
 SCALE, OFFSET = 270 / SR, 991 / SR * 0.5

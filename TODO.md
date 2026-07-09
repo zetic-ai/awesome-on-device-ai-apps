@@ -67,10 +67,25 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
 
 ## 🔴 Follow-ups from the PR-queue migration (18 apps just added)
 
-- [ ] **REVOKE two leaked keys immediately.** Two PRs committed real Melange tokens; they were
-      public and are now scrubbed to placeholders here, but the live tokens must be rotated:
-      `dev_24c61ecf...` (NeuTTSNanoApp / NeuTTS) and `ztp_37418352...` (MedASR). Revoke in the
-      Melange dashboard.
+- [ ] **REVOKE three leaked Melange tokens (dashboard).** Real tokens came in via PRs. They are
+      now scrubbed from the working tree AND purged from all git history (history was rewritten
+      and force-pushed), but they were public in the source PRs, so the live tokens must still be
+      rotated in the Melange dashboard: `dev_24c61ecf...` (NeuTTS + PromptGuard),
+      `dev_d786c1fd...` (YOLO26), `ztp_37418352...` (MedASR). Revocation is the only real fix.
+- [ ] **License audit (conflicts with the "charge for it" pitch).** Several migrated apps use
+      models under commercial-use-restricted licenses. Confirm and, if needed, swap the model,
+      add a clear per-app license note, or stop featuring the app for the revenue story:
+  - **AGPL-3.0** (Ultralytics YOLO; commercial use needs an Ultralytics license): SafetyPPEYOLO,
+    VehiclePlateYOLO, AerialDetectYOLO, ShelfScanYOLO, Ultralytics_YOLOv26-Seg-Nano, plus the
+    original YOLO26 and YOLOv8.
+  - **CC-BY-NC / non-commercial / research-only**: DentalXrayDetect (CC-BY-NC-4.0),
+    ShelfScanYOLO, SensorForecastTS (CC-BY-NC-4.0), VoxScribe, RetinaDRScreen (research-only).
+  - (Details were in each app's `model_selection.md`, now removed but in git history.)
+- [ ] **Drop ONNX, use Melange's native pt2 path.** The migrated Flutter apps bundle static-shape
+      `.onnx` (the repo's heaviest non-vendored files: 43/37/17/12/11/6 MB). Melange ingests
+      `torch.export` / `.pt2` directly, which is lighter and avoids the ONNX-export slowdown.
+      Re-export those models via the pt2 path: smaller repo + faster inference + a stronger
+      "fastest on-device" story. Pair with the Git-LFS / weight-hosting decision above.
 - [ ] **These 18 apps came from UNMERGED PRs** (not yet reviewed/merged upstream). Treat them as
       unverified: build + run each on a device, confirm quality, and fix or drop any that fall
       below the "would a stranger use this?" bar.

@@ -5,8 +5,8 @@ from transformers import AutoTokenizer
 
 # Paths
 # Adjust path to point to your STATLESS 1024 model
-# model_path = "/Users/yeonseok/Documents/exp/ZETIC_MLange_apps/apps/t5_base_grammar_correction/iOS/vennify_t5-base-grammar-correction.mlpackage"
-model_path = "/Users/yeonseok/Documents/exp/ZETIC_MLange_apps/apps/t5_base_grammar_correction/iOS/vennify_t5-base-grammar-correction_fp32.mlpackage"
+# model_path = "apps/t5_base_grammar_correction/iOS/vennify_t5-base-grammar-correction.mlpackage"
+model_path = "apps/t5_base_grammar_correction/iOS/vennify_t5-base-grammar-correction_fp32.mlpackage"
 model_id = "vennify/t5-base-grammar-correction"
 
 print(f"Loading tokenizer: {model_id}")

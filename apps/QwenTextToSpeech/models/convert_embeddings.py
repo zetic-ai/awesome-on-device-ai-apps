@@ -62,7 +62,7 @@ def convert_pt_to_bin(pt_path, bin_path):
         traceback.print_exc()
 
 if __name__ == "__main__":
-    base_dir = "/Users/jsn/Desktop/open_source/zetic_apps/ZETIC_MLange_apps/apps/QwenTextToSpeech/models"
+    base_dir = "apps/QwenTextToSpeech/models"
     
     files_to_convert = [
         ("qwen3_tts_text_embedding.pt", "text_embedding.bin"),

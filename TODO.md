@@ -72,9 +72,12 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
       and force-pushed), but they were public in the source PRs, so the live tokens must still be
       rotated in the Melange dashboard: `dev_24c61ecf...` (NeuTTS + PromptGuard),
       `dev_d786c1fd...` (YOLO26), `ztp_37418352...` (MedASR). Revocation is the only real fix.
-- [ ] **License audit (conflicts with the "charge for it" pitch).** Several migrated apps use
-      models under commercial-use-restricted licenses. Confirm and, if needed, swap the model,
-      add a clear per-app license note, or stop featuring the app for the revenue story:
+- [ ] **License audit (DEFERRED, revisit at monetization).** Owner call: not a launch blocker
+      right now because we are not charging yet and there is a free tier; fine for a demo/showcase.
+      Revisit when we start monetizing, or if we ever tell users to ship these commercially, since
+      model licenses like AGPL / CC-BY-NC bind the downstream shipper regardless of Melange's tier.
+      Several migrated apps use commercial-use-restricted models; if it becomes relevant, swap the
+      model, add a per-app license note, or stop featuring the app for the revenue story:
   - **AGPL-3.0** (Ultralytics YOLO; commercial use needs an Ultralytics license): SafetyPPEYOLO,
     VehiclePlateYOLO, AerialDetectYOLO, ShelfScanYOLO, Ultralytics_YOLOv26-Seg-Nano, plus the
     original YOLO26 and YOLOv8.

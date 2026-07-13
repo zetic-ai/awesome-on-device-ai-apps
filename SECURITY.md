@@ -1,3 +1,14 @@
+<p align="center">
+  <b>English</b> ·
+  <a href="translations/SECURITY.de.md">German</a> ·
+  <a href="translations/SECURITY.es.md">Spanish</a> ·
+  <a href="translations/SECURITY.fr.md">French</a> ·
+  <a href="translations/SECURITY.ja.md">Japanese</a> ·
+  <a href="translations/SECURITY.ko.md">Korean</a> ·
+  <a href="translations/SECURITY.pt.md">Portuguese</a> ·
+  <a href="translations/SECURITY.zh.md">Chinese</a>
+</p>
+
 # Security Policy
 
 ## API keys & secrets

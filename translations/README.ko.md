@@ -109,7 +109,7 @@ let outputs = try model.run(inputs: inputs)
 3. `python3 scripts/generate_catalog.py`를 실행해 카탈로그에 추가하세요
 4. 실기기에서 도는 걸 증명하세요 (PR에 데모 GIF)
 
-전체 가이드 → **[CONTRIBUTING.md](../CONTRIBUTING.md)**. 질문은 → [Discord](https://discord.gg/gqhDWfZbgU).
+전체 가이드 → **[CONTRIBUTING.md](CONTRIBUTING.ko.md)**. 질문은 → [Discord](https://discord.gg/gqhDWfZbgU).
 
 <br/>
 

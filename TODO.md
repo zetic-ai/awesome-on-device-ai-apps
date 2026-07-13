@@ -106,10 +106,10 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
 
 - [ ] **Native-speaker review of the README translations.** `translations/README.{de,es,fr,ja,ko,pt,zh}.md`
       were drafted in-house and should be proofread by a native speaker per language before launch.
-- [ ] **Translate the community docs** (scope: README + CONTRIBUTING + SECURITY + CODE_OF_CONDUCT).
-      README is done in 7 languages; still to do: `CONTRIBUTING`, `SECURITY`, `CODE_OF_CONDUCT`
-      into the same 7, plus a language selector on those English originals, and repoint the
-      translated READMEs' "Contributing" links to the translated CONTRIBUTING.
+- [x] **Translate the community docs** (README + CONTRIBUTING + SECURITY + CODE_OF_CONDUCT).
+      Done: all 4 docs in 7 languages (28 files in `translations/`), language selectors on the
+      English originals, and translated READMEs link to their translated CONTRIBUTING. Still
+      pending: native-speaker proofreading (above).
 - [ ] **Keep translations in sync.** They are static copies and will drift when the English README
       changes. Update them (or add a check) whenever the English original changes materially.
 - Policy: English is the default/original (must stay Korean-free); `translations/` holds the

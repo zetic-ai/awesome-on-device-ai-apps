@@ -109,7 +109,7 @@ Cette galerie grandit par les contributions, et la barre est une seule question 
 3. Lancez `python3 scripts/generate_catalog.py` pour l'ajouter au catalogue
 4. Prouvez qu'elle tourne sur un vrai appareil (GIF de démo dans la PR)
 
-Guide complet → **[CONTRIBUTING.md](../CONTRIBUTING.md)**. Questions → [Discord](https://discord.gg/gqhDWfZbgU).
+Guide complet → **[CONTRIBUTING.md](CONTRIBUTING.fr.md)**. Questions → [Discord](https://discord.gg/gqhDWfZbgU).
 
 <br/>
 

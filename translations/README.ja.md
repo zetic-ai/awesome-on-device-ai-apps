@@ -109,7 +109,7 @@ let outputs = try model.run(inputs: inputs)
 3. `python3 scripts/generate_catalog.py` を実行してカタログに追加する
 4. 実機で動くことを証明する（PRにデモGIF）
 
-詳しいガイド → **[CONTRIBUTING.md](../CONTRIBUTING.md)**。質問は → [Discord](https://discord.gg/gqhDWfZbgU)。
+詳しいガイド → **[CONTRIBUTING.md](CONTRIBUTING.ja.md)**。質問は → [Discord](https://discord.gg/gqhDWfZbgU)。
 
 <br/>
 

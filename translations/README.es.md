@@ -109,7 +109,7 @@ Esta galería crece con las contribuciones, y el listón es una sola pregunta: *
 3. Ejecuta `python3 scripts/generate_catalog.py` para añadirla al catálogo
 4. Demuestra que corre en un dispositivo real (GIF de demo en el PR)
 
-Guía completa → **[CONTRIBUTING.md](../CONTRIBUTING.md)**. Preguntas → [Discord](https://discord.gg/gqhDWfZbgU).
+Guía completa → **[CONTRIBUTING.md](CONTRIBUTING.es.md)**. Preguntas → [Discord](https://discord.gg/gqhDWfZbgU).
 
 <br/>
 

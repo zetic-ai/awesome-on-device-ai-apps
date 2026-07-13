@@ -109,7 +109,7 @@ Esta galeria cresce com contribuições, e a régua é uma só pergunta: **um es
 3. Rode `python3 scripts/generate_catalog.py` para adicioná-lo ao catálogo
 4. Prove que roda num aparelho real (GIF de demo no PR)
 
-Guia completo → **[CONTRIBUTING.md](../CONTRIBUTING.md)**. Dúvidas → [Discord](https://discord.gg/gqhDWfZbgU).
+Guia completo → **[CONTRIBUTING.md](CONTRIBUTING.pt.md)**. Dúvidas → [Discord](https://discord.gg/gqhDWfZbgU).
 
 <br/>
 

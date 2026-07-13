@@ -109,7 +109,7 @@ let outputs = try model.run(inputs: inputs)
 3. 运行 `python3 scripts/generate_catalog.py` 将其加入目录
 4. 证明它能在真机上运行（PR 中附演示 GIF）
 
-完整指南 → **[CONTRIBUTING.md](../CONTRIBUTING.md)**。有问题 → [Discord](https://discord.gg/gqhDWfZbgU)。
+完整指南 → **[CONTRIBUTING.md](CONTRIBUTING.zh.md)**。有问题 → [Discord](https://discord.gg/gqhDWfZbgU)。
 
 <br/>
 

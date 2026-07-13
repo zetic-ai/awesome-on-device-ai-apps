@@ -1,3 +1,14 @@
+<p align="center">
+  <b>English</b> ·
+  <a href="translations/CONTRIBUTING.de.md">German</a> ·
+  <a href="translations/CONTRIBUTING.es.md">Spanish</a> ·
+  <a href="translations/CONTRIBUTING.fr.md">French</a> ·
+  <a href="translations/CONTRIBUTING.ja.md">Japanese</a> ·
+  <a href="translations/CONTRIBUTING.ko.md">Korean</a> ·
+  <a href="translations/CONTRIBUTING.pt.md">Portuguese</a> ·
+  <a href="translations/CONTRIBUTING.zh.md">Chinese</a>
+</p>
+
 # Contributing
 
 Thanks for helping build the best collection of **on-device AI apps** anywhere. The bar for every app here is one question:
@@ -40,7 +51,7 @@ Not "does it demo a model." Not "does it compile." *Would someone use it.* If ye
 - **It runs on a real device.** Simulators don't have the NPU. Prove it with a demo GIF in the PR.
 - **No secrets.** Never commit a real Melange key. Keys stay as placeholders (`YOUR_PERSONAL_ACCESS_TOKEN`); use `./scripts/adapt_mlange_key.sh` locally and `./scripts/setup_git_ignore_keys.sh` to keep them out of git. See [SECURITY.md](SECURITY.md).
 - **Consistent layout.** Match the folder shape of existing apps.
-- **English only** in authored content: docs, code comments, UI chrome, and commit messages. (Functional i18n data is fine: a language's own endonym in a language picker, or language-specific demo strings in a translator/transcriber that actually supports that language.)
+- **English for the app content you contribute** (app README, code comments, UI chrome, commit messages). English is the default; repo-level docs are also offered as translations under `translations/`. Functional i18n data is fine: a language's own endonym in a language picker, or language-specific demo strings in a translator/transcriber that actually supports that language.
 - **Model license.** Make sure the underlying model permits redistribution/use, and note it in the app README.
 
 ## Getting a Melange key

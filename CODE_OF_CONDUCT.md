@@ -1,3 +1,14 @@
+<p align="center">
+  <b>English</b> ·
+  <a href="translations/CODE_OF_CONDUCT.de.md">German</a> ·
+  <a href="translations/CODE_OF_CONDUCT.es.md">Spanish</a> ·
+  <a href="translations/CODE_OF_CONDUCT.fr.md">French</a> ·
+  <a href="translations/CODE_OF_CONDUCT.ja.md">Japanese</a> ·
+  <a href="translations/CODE_OF_CONDUCT.ko.md">Korean</a> ·
+  <a href="translations/CODE_OF_CONDUCT.pt.md">Portuguese</a> ·
+  <a href="translations/CODE_OF_CONDUCT.zh.md">Chinese</a>
+</p>
+
 # Code of Conduct
 
 ## Our pledge

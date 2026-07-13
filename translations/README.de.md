@@ -109,7 +109,7 @@ Diese Galerie wächst durch Beiträge, und die Messlatte ist eine einzige Frage:
 3. Führe `python3 scripts/generate_catalog.py` aus, um sie in den Katalog aufzunehmen
 4. Beweise, dass sie auf einem echten Gerät läuft (Demo-GIF im PR)
 
-Vollständige Anleitung → **[CONTRIBUTING.md](../CONTRIBUTING.md)**. Fragen → [Discord](https://discord.gg/gqhDWfZbgU).
+Vollständige Anleitung → **[CONTRIBUTING.md](CONTRIBUTING.de.md)**. Fragen → [Discord](https://discord.gg/gqhDWfZbgU).
 
 <br/>
 

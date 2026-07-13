@@ -198,7 +198,7 @@ Full guide → **[CONTRIBUTING.md](CONTRIBUTING.md)**. Questions → [Discord](h
 
 <div align="center">
 
-[![Star History Chart](https://api.star-history.com/svg?repos=zetic-ai/awesome-on-device-ai-apps&type=Date)](https://star-history.com/#zetic-ai/awesome-on-device-ai-apps&Date)
+[![Star History](https://img.shields.io/badge/%E2%AD%90%20Star%20History-View%20live%20chart-8A2BE2?style=for-the-badge)](https://star-history.com/#zetic-ai/awesome-on-device-ai-apps&Date)
 
 <br/>
 

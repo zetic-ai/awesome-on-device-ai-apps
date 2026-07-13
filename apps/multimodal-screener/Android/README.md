@@ -1,6 +1,6 @@
 # Aiberry — Berry Check-in (Android, on-device demo)
 
-A Jetpack Compose port of [`../iOS-Aiberry`](../iOS-Aiberry): a Botberry-style **guided
+A Jetpack Compose port of [the iOS app](../iOS): a Botberry-style **guided
 multimodal mood check-in that runs 100% on-device** via ZETIC Melange. You talk to an
 emoting "Berry" avatar; your **facial expression** (Melange FER) and **voice**
 (Melange wav2vec2 SER) are read locally and fused into an explainable, *non-diagnostic*

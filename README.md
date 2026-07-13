@@ -1,3 +1,14 @@
+<p align="center">
+  <b>English</b> ·
+  <a href="translations/README.de.md">German</a> ·
+  <a href="translations/README.es.md">Spanish</a> ·
+  <a href="translations/README.fr.md">French</a> ·
+  <a href="translations/README.ja.md">Japanese</a> ·
+  <a href="translations/README.ko.md">Korean</a> ·
+  <a href="translations/README.pt.md">Portuguese</a> ·
+  <a href="translations/README.zh.md">Chinese</a>
+</p>
+
 <div align="center">
 
 # 🧠 Awesome On-Device AI Apps

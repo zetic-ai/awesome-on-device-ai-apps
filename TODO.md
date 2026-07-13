@@ -102,6 +102,19 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
 - [ ] **Repo weight jumped** (~+464 MB of bundled model weights from the migration). Revisit the
       Git-LFS decision above with urgency now that it is real.
 
+## 🌍 Translations
+
+- [ ] **Native-speaker review of the README translations.** `translations/README.{de,es,fr,ja,ko,pt,zh}.md`
+      were drafted in-house and should be proofread by a native speaker per language before launch.
+- [ ] **Translate the community docs** (scope: README + CONTRIBUTING + SECURITY + CODE_OF_CONDUCT).
+      README is done in 7 languages; still to do: `CONTRIBUTING`, `SECURITY`, `CODE_OF_CONDUCT`
+      into the same 7, plus a language selector on those English originals, and repoint the
+      translated READMEs' "Contributing" links to the translated CONTRIBUTING.
+- [ ] **Keep translations in sync.** They are static copies and will drift when the English README
+      changes. Update them (or add a check) whenever the English original changes materially.
+- Policy: English is the default/original (must stay Korean-free); `translations/` holds the
+  localized copies. The CI Korean check excludes `translations/`.
+
 ## 🟢 Growth / launch
 
 - [ ] **Launch:** execute the plan in [docs/LAUNCH.md](docs/LAUNCH.md) (Show HN + ready-to-use

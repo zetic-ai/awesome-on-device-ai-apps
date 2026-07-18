@@ -18,6 +18,8 @@ Runs entirely on the phone via `MedASR`, powered by [Melange](https://mlange.zet
 
 The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
+> **Platform note:** this demo currently ships the **Android** build. The `MedASR` model runs on iOS, Android, and Flutter through Melange, so adding the iOS and Flutter build is a small lift, not a rewrite. PRs welcome.
+
 ## Details
 
 | Model | Platforms | Runtime |

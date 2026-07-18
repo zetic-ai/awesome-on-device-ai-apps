@@ -18,6 +18,8 @@ Runs entirely on the phone via `Llama Prompt Guard 2`, powered by [Melange](http
 
 The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
+> **Platform note:** this demo currently ships the **iOS** build. The `Llama Prompt Guard 2` model runs on iOS, Android, and Flutter through Melange, so adding the Android and Flutter build is a small lift, not a rewrite. PRs welcome.
+
 ## Details
 
 | Model | Platforms | Runtime |

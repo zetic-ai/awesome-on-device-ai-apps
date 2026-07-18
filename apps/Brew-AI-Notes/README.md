@@ -20,6 +20,8 @@ Runs entirely on the phone via `Gemma-4-E2B`, powered by [Melange](https://mlang
 
 The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
+> **Platform note:** this demo currently ships the **iOS** build. The `Gemma-4-E2B` model runs on iOS, Android, and Flutter through Melange, so adding the Android and Flutter build is a small lift, not a rewrite. PRs welcome.
+
 ## Details
 
 | Model | Platforms | Runtime |

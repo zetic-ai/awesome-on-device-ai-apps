@@ -18,6 +18,8 @@ Runs entirely on the phone via `YOLOv26-Seg Nano`, powered by [Melange](https://
 
 The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
+> **Platform note:** this demo currently ships the **Android** build. The `YOLOv26-Seg Nano` model runs on iOS, Android, and Flutter through Melange, so adding the iOS and Flutter build is a small lift, not a rewrite. PRs welcome.
+
 ## Details
 
 | Model | Platforms | Runtime |

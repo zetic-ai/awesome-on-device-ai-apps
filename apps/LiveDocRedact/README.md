@@ -14,7 +14,7 @@ Runs entirely on the phone via `PP-OCRv5 (DBNet + CRNN)`, powered by [Melange](h
 
 1. Grab a free [Melange](https://mlange.zetic.ai) key (30 seconds, no card): Settings, then Personal Access Token.
 2. From the repo root, run `./scripts/adapt_mlange_key.sh`.
-3. Open `Flutter/` and run `flutter run` on a connected device.
+3. Open `Flutter/` and run `flutter run` on a connected device. This one Flutter codebase builds for **both iOS and Android**.
 
 The app pulls its NPU-optimized weights on first launch, then runs fully offline.
 
@@ -22,7 +22,7 @@ The app pulls its NPU-optimized weights on first launch, then runs fully offline
 
 | Model | Platforms | Runtime |
 | :-- | :-- | :-- |
-| [`PP-OCRv5 (DBNet + CRNN)`](https://mlange.zetic.ai/p/ajayshah/LiveDocRedact_Detect) | Flutter | [Melange](https://mlange.zetic.ai) |
+| [`PP-OCRv5 (DBNet + CRNN)`](https://mlange.zetic.ai/p/ajayshah/LiveDocRedact_Detect) | iOS, Android, Flutter | [Melange](https://mlange.zetic.ai) |
 
 ---
 

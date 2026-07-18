@@ -89,6 +89,11 @@ human with a device, real credentials, or a judgment call. Grab one, do it, chec
       `torch.export` / `.pt2` directly, which is lighter and avoids the ONNX-export slowdown.
       Re-export those models via the pt2 path: smaller repo + faster inference + a stronger
       "fastest on-device" story. Pair with the Git-LFS / weight-hosting decision above.
+- [ ] **Verify + finish cross-platform for the Flutter apps.** The 12 Flutter apps have both
+      `Flutter/ios` and `Flutter/android` scaffolds, so they are *supportable* on iOS and Android,
+      but the per-platform Melange native wiring is not verified on both yet. They are labeled just
+      `Flutter` for now. Once a platform is wired + device-tested, add it (e.g. `iOS` `Android`) to
+      that app's `meta.json` and drop the platform note. Same for the 6 single-platform native apps.
 - [ ] **These 18 apps came from UNMERGED PRs** (not yet reviewed/merged upstream). Treat them as
       unverified: build + run each on a device, confirm quality, and fix or drop any that fall
       below the "would a stranger use this?" bar.

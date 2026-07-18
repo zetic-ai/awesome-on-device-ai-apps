@@ -14,15 +14,17 @@ Runs entirely on the phone via `pyannote + Whisper`, powered by [Melange](https:
 
 1. Grab a free [Melange](https://mlange.zetic.ai) key (30 seconds, no card): Settings, then Personal Access Token.
 2. From the repo root, run `./scripts/adapt_mlange_key.sh`.
-3. Open `Flutter/` and run `flutter run` on a connected device. This one Flutter codebase builds for **both iOS and Android**.
+3. Open `Flutter/` and run `flutter run` on a connected device.
 
 The app pulls its NPU-optimized weights on first launch, then runs fully offline.
+
+> **Platform note:** this ships as a Flutter app. iOS and Android are both **supportable** from one Flutter codebase via Melange, but the per-platform Melange wiring is not verified on both yet, so treat this as the Flutter build for now. PRs welcome.
 
 ## Details
 
 | Model | Platforms | Runtime |
 | :-- | :-- | :-- |
-| [`pyannote + Whisper`](https://mlange.zetic.ai/p/ajayshah/VoxScribe-whisper-decoder) | iOS, Android, Flutter | [Melange](https://mlange.zetic.ai) |
+| [`pyannote + Whisper`](https://mlange.zetic.ai/p/ajayshah/VoxScribe-whisper-decoder) | Flutter | [Melange](https://mlange.zetic.ai) |
 
 ---
 

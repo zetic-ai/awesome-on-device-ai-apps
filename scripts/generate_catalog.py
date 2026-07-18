@@ -61,17 +61,8 @@ def cat_id(cat):
     return "cat-" + re.sub(r"[^a-z0-9]+", "-", cat.lower()).strip("-")
 
 
-_PLAT_ORDER = {"iOS": 0, "Android": 1, "Flutter": 2}
-
-
 def platform_badges(plats):
-    display = list(plats)
-    if "Flutter" in display:  # a Flutter codebase builds for both iOS and Android
-        for p in ("iOS", "Android"):
-            if p not in display:
-                display.append(p)
-    display.sort(key=lambda p: _PLAT_ORDER.get(p, 9))
-    return " ".join(f"`{p}`" for p in display) or "·"
+    return " ".join(f"`{p}`" for p in plats) or "·"
 
 
 def render_catalog(apps, link_prefix="apps/", anchors=True):
